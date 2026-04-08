@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Disponibilidad — Congregación Hnas. Dominicas</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -161,12 +161,115 @@ header h1 em{color:var(--c1);font-style:italic;}
 footer{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
 footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
 
-@media(max-width:900px){
-  .sum-row,.sum-row-4,.inv-grid,.dg,.hist-grid{grid-template-columns:1fr}
+/* ── TABLET ── */
+@media(max-width:1024px){
+  :root{font-size:15px;}
+  .sum-row{grid-template-columns:repeat(3,1fr)}
+  .sum-row-4{grid-template-columns:repeat(2,1fr)}
+  .hero-pills{display:none}
+  .inviu-pills{flex-wrap:wrap}
+  .asset-table th:nth-child(3),.asset-table td:nth-child(3),
+  .asset-table th:nth-child(5),.asset-table td:nth-child(5){display:none}
+  .comp-table th:nth-child(3),.comp-table td:nth-child(3){display:none}
+}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  :root{font-size:13px;}
+  body{padding:.75rem}
+
+  /* header */
+  header{flex-direction:column;align-items:flex-start;gap:.6rem;}
+  .org-tag{font-size:.75rem;}
+  header h1{font-size:1.6rem;}
+  .date-badge{font-size:.8rem;padding:.4rem 1rem;align-self:flex-start;}
+
+  /* tabs — scrollable horizontal */
+  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;gap:0;padding-bottom:0;flex-wrap:nowrap;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab-btn{font-size:.75rem;padding:.55rem .9rem;white-space:nowrap;flex-shrink:0;}
+
+  /* hero */
+  .hero{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem;}
+  .hl-amount{font-size:2.2rem;}
+  .hl-label{font-size:.65rem;}
+  .hl-sub{font-size:.72rem;}
+  .hero-pills{display:none}
+
+  /* inviu hero */
+  .inviu-hero{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem;}
+  .ih-amount{font-size:2rem;}
+  .inviu-pills{display:none}
+
+  /* hist heroes */
+  .hist-hero-inv,.hist-hero-tot{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem;}
+  .hh-title{font-size:1.6rem;}
+  .xpill{display:none}
+
+  /* summary cards — 2 col */
+  .sum-row{grid-template-columns:repeat(2,1fr);gap:.5rem}
+  .sum-row-4{grid-template-columns:repeat(2,1fr);gap:.5rem}
+  .sc .sc-val{font-size:1rem;}
+  .sc .sc-lbl{font-size:.65rem;}
+  .sc .sc-sub{font-size:.65rem;}
+
+  /* all grids → single col */
+  .dg,.inv-grid,.hist-grid,.div2{grid-template-columns:1fr}
   .dg .full,.inv-grid .full,.hist-grid .full{grid-column:1}
-  .div2{grid-template-columns:1fr}
-  .hero-pills,.inviu-pills{display:none}
-  body{padding:1rem}
+
+  /* sections */
+  .sh h2{font-size:.68rem;}
+  .sh .st{font-size:.88rem;}
+  .row{padding:.55rem 1rem;}
+  .rn{font-size:.82rem;}
+  .rn strong{font-size:.86rem;}
+  .rv{font-size:.88rem;}
+  .rv small{font-size:.66rem;}
+
+  /* tables — hide less important cols, make scrollable */
+  .asset-table,.comp-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .asset-table th,.asset-table td,
+  .comp-table th,.comp-table td{font-size:.8rem;padding:.5rem .7rem;white-space:nowrap;}
+  .ticker{font-size:.82rem;}
+  .desc{font-size:.75rem;}
+
+  /* distribution chart inline grid */
+  div[style*="grid-template-columns:200px"]{
+    display:flex!important;flex-direction:column!important;gap:.5rem!important;
+  }
+  div[style*="grid-template-columns:190px"]{
+    display:flex!important;flex-direction:column!important;gap:.5rem!important;
+  }
+
+  /* timeline */
+  .tl-total{font-size:1.5rem;}
+  .tl-date{font-size:.75rem;}
+  .tl-var{font-size:.75rem;}
+  .tl-detail{font-size:.78rem;}
+
+  /* evo bars */
+  .evo-bars{gap:1.5rem;}
+  .evo-bar-val{font-size:.82rem;}
+
+  /* dist bars */
+  .dbi-name{font-size:.82rem;}
+  .dbi-val{font-size:.8rem;}
+
+  /* footer */
+  footer{flex-direction:column;align-items:flex-start;gap:.3rem;}
+  footer p{font-size:.7rem;}
+
+  /* ipills */
+  .ipill,.xpill{min-width:90px;padding:.6rem .7rem;}
+  .ipill .ip-val,.xpill .xp-val{font-size:.9rem;}
+}
+
+/* ── SMALL MOBILE (≤380px) ── */
+@media(max-width:380px){
+  :root{font-size:12px;}
+  .sum-row,.sum-row-4{grid-template-columns:1fr}
+  .hl-amount{font-size:1.9rem;}
+  header h1{font-size:1.4rem;}
 }
 </style>
 </head>

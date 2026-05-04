@@ -25,6 +25,7 @@ header h1 em{color:var(--c1);font-style:italic;}
 .tab-btn.t-inviu.active{color:#007a35;border-bottom-color:#007a35;}
 .tab-btn.t-hist.active{color:#7a3a8a;border-bottom-color:#7a3a8a;}
 .tab-btn.t-histtot.active{color:#b03030;border-bottom-color:#b03030;}
+.tab-btn.t-estrategia.active{color:#0e6b7a;border-bottom-color:#0e6b7a;}
 .tab-panel{display:none;}.tab-panel.active{display:block;}
 
 /* HERO */
@@ -171,6 +172,8 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
   .asset-table th:nth-child(3),.asset-table td:nth-child(3),
   .asset-table th:nth-child(5),.asset-table td:nth-child(5){display:none}
   .comp-table th:nth-child(3),.comp-table td:nth-child(3){display:none}
+  div[style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(3,1fr)!important;}
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
 }
 
 /* ── MOBILE ── */
@@ -255,6 +258,12 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
   .dbi-name{font-size:.82rem;}
   .dbi-val{font-size:.8rem;}
 
+  /* estrategia grids */
+  div[style*="grid-template-columns:repeat(6"]{grid-template-columns:repeat(2,1fr)!important;}
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  div[style*="border-right:1px solid var(--border)"]{border-right:none!important;border-bottom:1px solid var(--border);}
+
   /* footer */
   footer{flex-direction:column;align-items:flex-start;gap:.3rem;}
   footer p{font-size:.7rem;}
@@ -280,109 +289,174 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
     <div class="org-tag">Congregación Hnas. Dominicas — Centro Administrativo</div>
     <h1>Disponibilidad <em>Financiera</em></h1>
   </div>
-  <div class="date-badge">Martes 07 de Abril 2026</div>
+  <div class="date-badge">Jueves 30 de Abril 2026</div>
 </header>
 
 <div class="tabs">
   <button class="tab-btn active"    onclick="switchTab('general',this)">🏦 Resumen General</button>
   <button class="tab-btn t-inviu"   onclick="switchTab('inviu',this)">📊 Análisis Inviu</button>
+  <button class="tab-btn t-estrategia" onclick="switchTab('estrategia',this)">🎯 Estrategia Financiera</button>
   <button class="tab-btn t-hist"    onclick="switchTab('hist',this)">📈 Seguimiento Inviu</button>
   <button class="tab-btn t-histtot" onclick="switchTab('histtot',this)">📊 Seguimiento Total</button>
 </div>
 
 <!-- ═══════════════════════════════ TAB GENERAL ═══════════ -->
 <div id="tab-general" class="tab-panel active">
+
+  <!-- NOVEDADES -->
+  <div style="background:#fffbf0;border:1px solid #e8c84a;border-radius:14px;padding:1.1rem 1.5rem;margin-bottom:1.2rem;display:flex;gap:1rem;align-items:flex-start;">
+    <div style="font-size:1.3rem;flex-shrink:0;margin-top:.1rem;">📋</div>
+    <div style="flex:1;">
+      <div style="font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:#8a6a00;font-weight:700;margin-bottom:.6rem;">Novedades — Custodias y Aclaraciones</div>
+      <div style="display:flex;flex-direction:column;gap:.55rem;">
+
+        <div style="display:flex;gap:.8rem;align-items:flex-start;background:#fff;border:1px solid #f0d060;border-radius:9px;padding:.8rem 1rem;">
+          <div style="background:#e8c84a;color:#fff;font-size:.7rem;font-weight:700;font-family:'DM Mono',monospace;padding:.2rem .6rem;border-radius:100px;white-space:nowrap;flex-shrink:0;margin-top:.1rem;">18 JUL 2025</div>
+          <div>
+            <div style="font-size:.95rem;font-weight:600;color:#5a4000;margin-bottom:.2rem;">Custodia USD — Colegio Santísimo Rosario de Rosario</div>
+            <div style="font-size:.9rem;color:#7a6020;line-height:1.65;">
+              El Colegio Santísimo Rosario de Rosario entregó en concepto de <strong style="color:#5a4000;">custodia y resguardo USD 7.699,65</strong> (siete mil seiscientos noventa y nueve con 65/100), depositados en la caja fuerte del Centro Administrativo de la Congregación. Dicha suma permanecerá bajo resguardo hasta nueva disposición expresa del Colegio. <strong style="color:#5a4000;">Estos fondos no se computan como disponibilidad propia</strong> y han sido excluidos de todos los totales del presente informe. Nota firmada por Hna. Stella M. Zamero (Ecónoma) y CPN. Luis Soria.
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:.8rem;align-items:flex-start;background:#fff;border:1px solid #f0d060;border-radius:9px;padding:.8rem 1rem;">
+          <div style="background:#0e6b7a;color:#fff;font-size:.7rem;font-weight:700;font-family:'DM Mono',monospace;padding:.2rem .6rem;border-radius:100px;white-space:nowrap;flex-shrink:0;margin-top:.1rem;">30 ABR 2026</div>
+          <div>
+            <div style="font-size:.95rem;font-weight:600;color:#5a4000;margin-bottom:.2rem;">Plazo Fijo Galicia — Casa Madre (fondos de terceros custodiados)</div>
+            <div style="font-size:.9rem;color:#7a6020;line-height:1.65;">
+              Casa Madre mantiene un <strong style="color:#5a4000;">Plazo Fijo en Galicia</strong> administrado por el Centro Administrativo por un total de <strong style="color:#5a4000;">$3.781.368,24</strong>, compuesto por: <strong style="color:#5a4000;">443 USD</strong> (≈ $616.213) + <strong style="color:#5a4000;">1.867 EUR</strong> (≈ $3.050.155) + <strong style="color:#5a4000;">$115.000 efectivo ARS</strong>. Estos fondos <strong style="color:#b03030;">NO se computan como disponibilidad propia</strong> del Centro Administrativo y no están incluidos en los totales del informe. Los USD del Economato propios son 8.510,35 (16.210 - 7.699,65 Colegio SSmo Rosario).
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <div class="hero">
     <div>
       <div class="hl-label">Total General Disponible — ARS equivalente</div>
-      <div class="hl-amount"><span>$</span> 618.426.749,97</div>
-      <div class="hl-sub">Bancos · Inversiones · Dólares · Euros · Caja efectivo · 07/04/2026</div>
+      <div class="hl-amount"><span>$</span> 766.279.574,40</div>
+      <div class="hl-sub">Bancos · Inversiones · Dólares · Euros · Caja efectivo · 30/04/2026</div>
     </div>
     <div class="hero-pills">
-      <div class="pill"><div class="p-lbl">USD físicos</div><div class="p-val">15.407,00</div><div class="p-pct">≈ $21.454.248 @ $1.392,50</div></div>
-      <div class="pill"><div class="p-lbl">EUR</div><div class="p-val">744,17</div><div class="p-pct">≈ $1.201.835 @ $1.615</div></div>
-      <div class="pill"><div class="p-lbl">Inversiones</div><div class="p-val">$588.701.521</div><div class="p-pct">95,19 % del total</div></div>
-      <div class="pill"><div class="p-lbl">Bancos + Caja</div><div class="p-val">$7.069.147</div><div class="p-pct">1,14 % del total</div></div>
+      <div class="pill"><div class="p-lbl">USD físicos</div><div class="p-val">9.900,35</div><div class="p-pct">≈ $13.771.387 @ $1.391</div></div>
+      <div class="pill"><div class="p-lbl">EUR</div><div class="p-val">2.992,17</div><div class="p-pct">≈ $4.888.368 @ $1.633,72</div></div>
+      <div class="pill"><div class="p-lbl">Inversiones</div><div class="p-val">$735.075.282</div><div class="p-pct">96,87 % del total</div></div>
+      <div class="pill"><div class="p-lbl">Bancos + Caja</div><div class="p-val">$12.544.538</div><div class="p-pct">1,64 % del total</div></div>
     </div>
   </div>
 
   <div class="sum-row">
-    <div class="sc" style="--sc-c:#a07820;"><div class="sc-ico">🏦</div><div class="sc-lbl">Bancos — Pesos</div><div class="sc-val">$6.169.547</div><div class="sc-sub">6 entidades · 1,00 %</div></div>
-    <div class="sc" style="--sc-c:#1a9a50;"><div class="sc-ico">💵</div><div class="sc-lbl">Dólares físicos</div><div class="sc-val">USD 15.407,00</div><div class="sc-sub">≈ $21.454.248 · 3,47 %</div></div>
-    <div class="sc" style="--sc-c:#7a50a8;"><div class="sc-ico">💶</div><div class="sc-lbl">Euros</div><div class="sc-val">EUR 744,17</div><div class="sc-sub">≈ $1.201.835 · 0,19 %</div></div>
-    <div class="sc" style="--sc-c:#2060a8;"><div class="sc-ico">📈</div><div class="sc-lbl">Invertido (Inviu + FCI)</div><div class="sc-val">$588.701.521</div><div class="sc-sub">95,19 % del total</div></div>
-    <div class="sc" style="--sc-c:#b03030;"><div class="sc-ico">💰</div><div class="sc-lbl">Caja Efectivo</div><div class="sc-val">$899.600</div><div class="sc-sub">Efectivo pesos · 0,15 %</div></div>
+    <div class="sc" style="--sc-c:#a07820;"><div class="sc-ico">🏦</div><div class="sc-lbl">Bancos — Pesos</div><div class="sc-val">$10.919.757</div><div class="sc-sub">6 entidades · 1,42 %</div></div>
+    <div class="sc" style="--sc-c:#1a9a50;"><div class="sc-ico">💵</div><div class="sc-lbl">Dólares físicos</div><div class="sc-val">USD 9.900,35</div><div class="sc-sub">≈ $13.771.387 · 1,80 %</div></div>
+    <div class="sc" style="--sc-c:#7a50a8;"><div class="sc-ico">💶</div><div class="sc-lbl">Euros</div><div class="sc-val">EUR 2.992,17</div><div class="sc-sub">≈ $4.888.368 · 0,64 %</div></div>
+    <div class="sc" style="--sc-c:#2060a8;"><div class="sc-ico">📈</div><div class="sc-lbl">Invertido (Inviu + FCI)</div><div class="sc-val">$735.075.282</div><div class="sc-sub">96,87 % del total</div></div>
+    <div class="sc" style="--sc-c:#b03030;"><div class="sc-ico">💰</div><div class="sc-lbl">Caja Efectivo</div><div class="sc-val">$1.644.400</div><div class="sc-sub">Efectivo pesos · 0,21 %</div></div>
   </div>
 
   <div class="dg">
     <div class="sec">
-      <div class="sh" style="--dc:#a07820;"><div class="dot"></div><h2>Cuentas Bancarias — Pesos</h2><div class="st">$6.169.546,92</div></div>
+      <div class="sh" style="--dc:#a07820;"><div class="dot"></div><h2>Cuentas Bancarias — Pesos</h2><div class="st">$10.919.756,62</div></div>
       <div class="rows">
-        <div class="row"><div class="rn"><strong>Banco Nación (Rita)</strong>CA N° 17512551359433</div><div class="rv">$2.837.086,75<small>46,0 % — dato 11/03</small></div></div>
-        <div class="row"><div class="rn"><strong>Supervielle</strong>CC ARS 065-4117380-1</div><div class="rv">$2.102.771,82<small>34,1 %</small></div></div>
-        <div class="row"><div class="rn"><strong>Banco Galicia</strong>CC N° 0000753-7 357-2</div><div class="rv">$724.958,31<small>11,8 %</small></div></div>
-        <div class="row"><div class="rn"><strong>Banco Francés (BBVA)</strong></div><div class="rv">$383.110,69<small>6,2 %</small></div></div>
-        <div class="row"><div class="rn"><strong>Santander</strong></div><div class="rv">$100.722,97<small>1,6 %</small></div></div>
-        <div class="row"><div class="rn"><strong>Macro</strong>Saldo a girar</div><div class="rv">$20.896,38<small>0,3 % — dato 11/03</small></div></div>
+        <div class="row"><div class="rn"><strong>Banco Nación (Rita)</strong>CA N° 17512551359433</div><div class="rv">$1.268.011,96<small>11,6 %</small></div></div>
+        <div class="row"><div class="rn"><strong>Supervielle</strong>CC ARS 065-4117380-1</div><div class="rv">$171.879,06<small>77,8 %</small></div></div>
+        <div class="row"><div class="rn"><strong>Banco Galicia</strong>CC N° 0000753-7 357-2</div><div class="rv">$517.048,67<small>4,7 %</small></div></div>
+        <div class="row"><div class="rn"><strong>Banco Francés (BBVA)</strong></div><div class="rv">$445.739,18<small>4,1 %</small></div></div>
+        <div class="row"><div class="rn"><strong>Santander</strong></div><div class="rv">$8.476.562,37<small>77,8 %</small></div></div>
+        <div class="row"><div class="rn"><strong>Macro</strong>Saldo a girar</div><div class="rv">$40.515,38<small>0,2 % — dato 11/03</small></div></div>
       </div>
     </div>
 
     <div class="sec">
-      <div class="sh" style="--dc:#2060a8;"><div class="dot"></div><h2>Inversiones</h2><div class="st">$588.701.521,00</div></div>
+      <div class="sh" style="--dc:#2060a8;"><div class="dot"></div><h2>Inversiones</h2><div class="st">$735.075.281,96</div></div>
       <div class="rows">
-        <div class="row"><div class="rn"><strong>Inviu</strong><span class="b bv">Portfolio</span></div><div class="rv">$543.406.963,00<small>92,3 % de inversiones</small></div></div>
-        <div class="row"><div class="rn"><strong>FCI Galicia $</strong><span class="b bb">FCI</span></div><div class="rv">$45.294.558,00<small>7,7 % de inversiones</small></div></div>
+        <div class="row"><div class="rn"><strong>Inviu</strong><span class="b bv">Portfolio</span></div><div class="rv">$556.075.413,70<small>75,6 % de inversiones</small></div></div>
+        <div class="row"><div class="rn"><strong>FCI Galicia $</strong><span class="b bb">FCI</span></div><div class="rv">$178.999.868,26<small>24,4 % de inversiones</small></div></div>
       </div>
       <div style="padding:.7rem 1.3rem .9rem;border-top:1px solid var(--border);">
-        <div style="display:flex;justify-content:space-between;font-size:1.12rem;color:var(--text3);font-family:'DM Mono',monospace;margin-bottom:.3rem;"><span>■ Inviu 92,3 %</span><span>■ FCI 7,7 %</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:1.12rem;color:var(--text3);font-family:'DM Mono',monospace;margin-bottom:.3rem;"><span>■ Inviu 75,6 %</span><span>■ FCI 24,4 %</span></div>
         <div style="height:6px;border-radius:3px;overflow:hidden;display:flex;gap:2px;">
-          <div style="flex:92.3;background:#2060a8;border-radius:3px 0 0 3px;"></div>
-          <div style="flex:7.7;background:#a07820;border-radius:0 3px 3px 0;"></div>
+          <div style="flex:75.6;background:#2060a8;border-radius:3px 0 0 3px;"></div>
+          <div style="flex:24.4;background:#a07820;border-radius:0 3px 3px 0;"></div>
         </div>
       </div>
-      <div class="sh" style="--dc:#b03030;border-top:1px solid var(--border);"><div class="dot"></div><h2>Caja Efectivo</h2><div class="st">$899.600,00</div></div>
-      <div class="rows"><div class="row"><div class="rn"><strong>Saldo en caja</strong>Efectivo pesos físico</div><div class="rv">$899.600,00</div></div></div>
+      <div class="sh" style="--dc:#b03030;border-top:1px solid var(--border);"><div class="dot"></div><h2>Caja Efectivo</h2><div class="st">$1.644.400,00</div></div>
+      <div class="rows"><div class="row"><div class="rn"><strong>Saldo en caja</strong>Efectivo pesos físico</div><div class="rv">$1.644.400,00</div></div></div>
     </div>
 
     <div class="full div2">
       <div class="sec">
-        <div class="sh" style="--dc:#1a9a50;"><div class="dot"></div><h2>Dólares Físicos</h2><div class="st">USD 15.407,00</div></div>
+        <div class="sh" style="--dc:#1a9a50;"><div class="dot"></div><h2>Dólares Físicos</h2><div class="st">USD 9.900,35</div></div>
         <div class="rows">
-          <div class="row"><div class="rn"><strong>Economato</strong><span class="b bg">USD</span></div><div class="rv">14.017,00<small>≈ $19.518.673 @ $1.392,50</small></div></div>
-          <div class="row"><div class="rn"><strong>Casa Madre</strong><span class="b bg">USD</span></div><div class="rv">1.300,00<small>≈ $1.810.250 @ $1.392,50</small></div></div>
-          <div class="row"><div class="rn"><strong>Com SSM Rosario</strong><span class="b bg">USD</span></div><div class="rv">90,00<small>≈ $125.325 @ $1.392,50</small></div></div>
+          <div class="row"><div class="rn"><strong>Economato</strong><span class="b bg">USD</span><span class="b" style="background:rgba(160,120,32,.1);color:#a07820;border-color:rgba(160,120,32,.2);">propio</span></div><div class="rv">8.510,35<small>≈ $11.837.797 @ $1.391</small></div></div>
+          <div class="row" style="background:rgba(160,120,32,.04);"><div class="rn"><strong style="color:#a07820;">Economato — Colegio Ssmo Rosario</strong><span class="b" style="background:rgba(160,120,32,.12);color:#a07820;border-color:rgba(160,120,32,.25);">excluido</span></div><div class="rv" style="color:#a07820;">7.699,65<small>no computable — fondos Colegio Ssmo Rosario</small></div></div>
+          <div class="row"><div class="rn"><strong>Casa Madre</strong><span class="b bg">USD</span></div><div class="rv">1.300,00<small>≈ $1.808.300 @ $1.391</small></div></div>
+          <div class="row"><div class="rn"><strong>Com SSM Rosario</strong><span class="b bg">USD</span></div><div class="rv">90,00<small>≈ $125.190 @ $1.391</small></div></div>
           <div class="row"><div class="rn"><strong>Galicia CCE</strong><span class="bn b">sin saldo</span></div><div class="rv">—<small>N° 9750000-9 357-7</small></div></div>
         </div>
-        <div style="padding:.55rem 1.3rem .7rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);">Valuado @ BNA $1.392,50: <strong style="color:var(--text);">$21.454.248</strong></div>
+        <div style="padding:.55rem 1.3rem .7rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);">Valuado @ BNA $1.391 (fondos propios): <strong style="color:var(--text);">$13.771.387</strong> · <span style="color:#a07820;">7.699,65 USD del Colegio Ssmo Rosario excluidos</span></div>
       </div>
       <div class="sec">
-        <div class="sh" style="--dc:#7a50a8;"><div class="dot"></div><h2>Euros</h2><div class="st">EUR 744,17</div></div>
+        <div class="sh" style="--dc:#7a50a8;"><div class="dot"></div><h2>Euros</h2><div class="st">EUR 2.992,17</div></div>
         <div class="rows">
-          <div class="row"><div class="rn"><strong>Economato</strong><span class="b bb">EUR</span></div><div class="rv">335,36<small>≈ $541.606 @ $1.615</small></div></div>
-          <div class="row"><div class="rn"><strong>Cta. Hna. Mariana G</strong><span class="b bb">EUR</span></div><div class="rv">408,81<small>≈ $660.228 @ $1.615</small></div></div>
+          <div class="row"><div class="rn"><strong>Economato</strong><span class="b bb">EUR</span></div><div class="rv">1.703,36<small>≈ $2.782.813 @ $1.633,72</small></div></div>
+          <div class="row"><div class="rn"><strong>Cta. Hna. Mariana G</strong><span class="b bb">EUR</span></div><div class="rv">1.288,81<small>≈ $2.105.555 @ $1.633,72</small></div></div>
         </div>
-        <div style="padding:.55rem 1.3rem .7rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);">Valuado @ BNA $1.615: <strong style="color:var(--text);">$1.201.835</strong></div>
+        <div style="padding:.55rem 1.3rem .7rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);">Valuado @ BNA $1.633,72: <strong style="color:var(--text);">$4.888.368</strong></div>
       </div>
     </div>
 
-    <!-- Gráfico distribución -->
+    <!-- PLAZO FIJO CASA MADRE - TERCEROS -->
+    <div class="dg" style="margin-bottom:1rem;">
+      <div class="full">
+        <div style="background:linear-gradient(135deg,#1a0a2e 0%,#2d1060 100%);border-radius:13px;overflow:hidden;">
+          <div style="padding:.9rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:.5rem;">
+            <div style="width:9px;height:9px;border-radius:50%;background:#e8a020;flex-shrink:0;"></div>
+            <span style="font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.6);font-weight:600;">⚠️ Plazo Fijo Galicia — Fondos Casa Madre en Custodia · NO se computan como disponibilidad propia</span>
+            <div style="margin-left:auto;font-family:'DM Mono',monospace;font-size:1.1rem;color:#e8a020;font-weight:700;">$3.781.368,24</div>
+          </div>
+          <div style="padding:1rem 1.4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+            <div style="text-align:center;">
+              <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:.35rem;">Dólares</div>
+              <div style="font-family:'DM Mono',monospace;font-size:1.15rem;color:#fff;font-weight:700;">443 USD</div>
+              <div style="font-family:'DM Mono',monospace;font-size:.92rem;color:#e8a020;margin-top:.18rem;">≈ $616.213 @ $1.391</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.1);">
+              <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:.35rem;">Euros</div>
+              <div style="font-family:'DM Mono',monospace;font-size:1.15rem;color:#fff;font-weight:700;">1.867 EUR</div>
+              <div style="font-family:'DM Mono',monospace;font-size:.92rem;color:#e8a020;margin-top:.18rem;">≈ $3.050.155 @ $1.633,72</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:.35rem;">Efectivo ARS</div>
+              <div style="font-family:'DM Mono',monospace;font-size:1.15rem;color:#fff;font-weight:700;">$115.000</div>
+              <div style="font-family:'DM Mono',monospace;font-size:.92rem;color:rgba(255,255,255,.4);margin-top:.18rem;">pesos argentinos</div>
+            </div>
+          </div>
+          <div style="padding:.7rem 1.4rem .9rem;border-top:1px solid rgba(255,255,255,.08);font-size:.92rem;color:rgba(255,255,255,.45);line-height:1.65;">
+            Fondos de <strong style="color:rgba(255,255,255,.75);">Casa Madre</strong> en Plazo Fijo Galicia, administrados por el Centro Administrativo en carácter de custodia. <strong style="color:#e8a020;">No se incluyen en la disponibilidad propia del Centro Administrativo.</strong> Registrados únicamente a efectos informativos.
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="chart-wrap full">
-      <div class="sh" style="--dc:#111;"><div class="dot"></div><h2>Distribución del Disponible — ARS equivalente al 07/04/2026</h2><div class="st" style="font-weight:400;font-size:1.22rem;color:var(--text3);">Total: $618.426.750</div></div>
+      <div class="sh" style="--dc:#111;"><div class="dot"></div><h2>Distribución del Disponible — ARS equivalente al 30/04/2026</h2><div class="st" style="font-weight:400;font-size:1.22rem;color:var(--text3);">Total: $766.299.194</div></div>
       <div style="padding:1.4rem 1.7rem 1.6rem;">
         <div style="margin-bottom:1.5rem;">
           <div style="height:24px;border-radius:7px;overflow:hidden;display:flex;gap:1px;box-shadow:0 1px 4px rgba(0,0,0,.08);">
-            <div style="flex:95.19;background:#2060a8;"></div>
-            <div style="flex:3.47;background:#1a9a50;"></div>
-            <div style="flex:1.00;background:#a07820;min-width:4px;"></div>
-            <div style="flex:0.19;background:#7a50a8;min-width:3px;"></div>
+            <div style="flex:95.93;background:#2060a8;"></div>
+            <div style="flex:1.80;background:#1a9a50;"></div>
+            <div style="flex:1.42;background:#a07820;min-width:4px;"></div>
+            <div style="flex:0.64;background:#7a50a8;min-width:3px;"></div>
             <div style="flex:0.15;background:#b03030;min-width:3px;"></div>
           </div>
           <div style="display:flex;gap:1.5rem;margin-top:.45rem;flex-wrap:wrap;">
-            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#2060a8;font-weight:700;">■ Inversiones 95,19 %</span>
-            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#1a9a50;font-weight:700;">■ Dólares 3,47 %</span>
-            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#a07820;font-weight:700;">■ Bancos 1,00 %</span>
-            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#7a50a8;font-weight:700;">■ Euros 0,19 %</span>
-            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#b03030;font-weight:700;">■ Caja 0,15 %</span>
+            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#2060a8;font-weight:700;">■ Inversiones 95,93 %</span>
+            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#1a9a50;font-weight:700;">■ Dólares 1,80 %</span>
+            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#a07820;font-weight:700;">■ Bancos 1,42 %</span>
+            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#7a50a8;font-weight:700;">■ Euros 0,64 %</span>
+            <span style="font-family:'DM Mono',monospace;font-size:1.16rem;color:#b03030;font-weight:700;">■ Caja 0,21 %</span>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:200px 1fr 150px 65px;gap:.55rem 1.3rem;align-items:center;padding-bottom:.55rem;border-bottom:2px solid var(--border);margin-bottom:.55rem;">
@@ -394,37 +468,37 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
         <!-- filas -->
         <div style="display:grid;grid-template-columns:200px 1fr 150px 65px;gap:.55rem 1.3rem;align-items:center;padding:.46rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
           <div style="display:flex;align-items:center;gap:.55rem;"><div style="width:11px;height:11px;border-radius:50%;background:#2060a8;flex-shrink:0;"></div><span style="font-size:1.08rem;font-weight:600;">Inversiones</span><span style="font-size:1.12rem;color:var(--text3);">Inviu + FCI</span></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$588.701.521</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$735.075.282</div>
           <div style="height:10px;background:var(--surface2);border-radius:4px;overflow:hidden;"><div style="height:100%;width:100%;background:#2060a8;border-radius:4px;"></div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#2060a8;font-weight:700;text-align:right;">95,19 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#2060a8;font-weight:700;text-align:right;">95,93 %</div>
         </div>
         <div style="display:grid;grid-template-columns:200px 1fr 150px 65px;gap:.55rem 1.3rem;align-items:center;padding:.46rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
-          <div style="display:flex;align-items:center;gap:.55rem;"><div style="width:11px;height:11px;border-radius:50%;background:#1a9a50;flex-shrink:0;"></div><span style="font-size:1.08rem;font-weight:600;">Dólares físicos</span><span style="font-size:1.12rem;color:var(--text3);">USD 15.407</span></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$21.454.248</div>
-          <div style="height:10px;background:var(--surface2);border-radius:4px;overflow:hidden;"><div style="height:100%;width:3.64%;background:#1a9a50;border-radius:4px;"></div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#1a9a50;font-weight:700;text-align:right;">3,47 %</div>
+          <div style="display:flex;align-items:center;gap:.55rem;"><div style="width:11px;height:11px;border-radius:50%;background:#1a9a50;flex-shrink:0;"></div><span style="font-size:1.08rem;font-weight:600;">Dólares físicos</span><span style="font-size:1.12rem;color:var(--text3);">USD 9.900,35</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$13.771.387</div>
+          <div style="height:10px;background:var(--surface2);border-radius:4px;overflow:hidden;"><div style="height:100%;width:1.86%;background:#1a9a50;border-radius:4px;"></div></div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#1a9a50;font-weight:700;text-align:right;">1,80 %</div>
         </div>
         <div style="display:grid;grid-template-columns:200px 1fr 150px 65px;gap:.55rem 1.3rem;align-items:center;padding:.46rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
           <div style="display:flex;align-items:center;gap:.55rem;"><div style="width:11px;height:11px;border-radius:50%;background:#a07820;flex-shrink:0;"></div><span style="font-size:1.08rem;font-weight:600;">Bancos — Pesos</span></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$6.169.547</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$10.919.757</div>
           <div style="height:10px;background:var(--surface2);border-radius:4px;overflow:hidden;"><div style="height:100%;width:1.05%;background:#a07820;border-radius:4px;min-width:5px;"></div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#a07820;font-weight:700;text-align:right;">1,00 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#a07820;font-weight:700;text-align:right;">1,42 %</div>
         </div>
         <div style="display:grid;grid-template-columns:200px 1fr 150px 65px;gap:.55rem 1.3rem;align-items:center;padding:.46rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
-          <div style="display:flex;align-items:center;gap:.55rem;"><div style="width:11px;height:11px;border-radius:50%;background:#7a50a8;flex-shrink:0;"></div><span style="font-size:1.08rem;font-weight:600;">Euros</span><span style="font-size:1.12rem;color:var(--text3);">EUR 744,17</span></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$1.201.835</div>
+          <div style="display:flex;align-items:center;gap:.55rem;"><div style="width:11px;height:11px;border-radius:50%;background:#7a50a8;flex-shrink:0;"></div><span style="font-size:1.08rem;font-weight:600;">Euros</span><span style="font-size:1.12rem;color:var(--text3);">EUR 2.992,17</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$4.888.368</div>
           <div style="height:10px;background:var(--surface2);border-radius:4px;overflow:hidden;"><div style="height:100%;width:0.5%;background:#7a50a8;border-radius:4px;min-width:5px;"></div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#7a50a8;font-weight:700;text-align:right;">0,19 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#7a50a8;font-weight:700;text-align:right;">0,64 %</div>
         </div>
         <div style="display:grid;grid-template-columns:200px 1fr 150px 65px;gap:.55rem 1.3rem;align-items:center;padding:.46rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
           <div style="display:flex;align-items:center;gap:.55rem;"><div style="width:11px;height:11px;border-radius:50%;background:#b03030;flex-shrink:0;"></div><span style="font-size:1.08rem;font-weight:600;">Caja Efectivo</span></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$899.600</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.14rem;font-weight:700;">$1.644.400</div>
           <div style="height:10px;background:var(--surface2);border-radius:4px;overflow:hidden;"><div style="height:100%;width:0.5%;background:#b03030;border-radius:4px;min-width:5px;"></div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#b03030;font-weight:700;text-align:right;">0,15 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.1rem;color:#b03030;font-weight:700;text-align:right;">0,21 %</div>
         </div>
         <div style="display:grid;grid-template-columns:200px 1fr 150px 65px;gap:.55rem 1.3rem;align-items:center;padding:.65rem 0 0;border-top:2px solid var(--border);margin-top:.2rem;">
           <div style="font-size:1.1rem;font-weight:700;">TOTAL GENERAL</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.18rem;color:var(--c1);font-weight:700;">$618.426.750</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.18rem;color:var(--c1);font-weight:700;">$766.299.194</div>
           <div></div>
           <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:700;text-align:right;">100 %</div>
         </div>
@@ -437,77 +511,77 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
 <div id="tab-inviu" class="tab-panel">
   <div class="inviu-hero">
     <div>
-      <div class="ih-label">Portfolio Inviu — Cta. Comitente N° 232201 · Valuación 07/04/2026</div>
-      <div class="ih-amount"><span>$</span> 543.406.963,00</div>
-      <div class="ih-sub">HERMANAS DOMINICAS DEL SANTISIMO NOMBRE DE JESUS · TC USD MEP $1.430,16 · TC CCL $1.485,31</div>
+      <div class="ih-label">Portfolio Inviu — Cta. Comitente N° 232201 · Valuación 30/04/2026</div>
+      <div class="ih-amount"><span>$</span> 556.075.413,70</div>
+      <div class="ih-sub">HERMANAS DOMINICAS DEL SANTISIMO NOMBRE DE JESUS · TC USD MEP $1.442,43 · TC CCL $1.500,76</div>
     </div>
     <div class="inviu-pills">
-      <div class="ipill"><div class="ip-lbl">Moneda</div><div class="ip-val">$4.027</div><div class="ip-sub">0,00 %</div></div>
-      <div class="ipill"><div class="ip-lbl">Bonos</div><div class="ip-val">$453.137.387</div><div class="ip-sub">83,40 %</div></div>
-      <div class="ipill"><div class="ip-lbl">Caución Col.</div><div class="ip-val">$79.427.319</div><div class="ip-sub">14,62 %</div></div>
-      <div class="ipill"><div class="ip-lbl">Cedear</div><div class="ip-val">$10.838.230</div><div class="ip-sub">1,99 %</div></div>
+      <div class="ipill"><div class="ip-lbl">Moneda</div><div class="ip-val">$1.698.042</div><div class="ip-sub">0,31 %</div></div>
+      <div class="ipill"><div class="ip-lbl">Bonos</div><div class="ip-val">$462.085.622</div><div class="ip-sub">83,10 %</div></div>
+      <div class="ipill"><div class="ip-lbl">Caución Col.</div><div class="ip-val">$80.526.295</div><div class="ip-sub">14,48 %</div></div>
+      <div class="ipill"><div class="ip-lbl">Cedear</div><div class="ip-val">$11.765.455</div><div class="ip-sub">2,12 %</div></div>
     </div>
   </div>
 
   <div class="sum-row-4">
-    <div class="sc" style="--sc-c:#00a048;"><div class="sc-ico">💵</div><div class="sc-lbl">Moneda Disponible</div><div class="sc-val">$4.027</div><div class="sc-sub">USD MEP + Cable + ARS</div></div>
-    <div class="sc" style="--sc-c:#2060a8;"><div class="sc-ico">📋</div><div class="sc-lbl">Bonos</div><div class="sc-val">$453.137.387</div><div class="sc-sub">9 instrumentos · 83,40 %</div></div>
-    <div class="sc" style="--sc-c:#e07820;"><div class="sc-ico">🔒</div><div class="sc-lbl">Caución Colocadora</div><div class="sc-val">$79.427.319</div><div class="sc-sub">Vto. 10/04/2026</div></div>
-    <div class="sc" style="--sc-c:#7a50a8;"><div class="sc-ico">🌎</div><div class="sc-lbl">Cedear (BAK)</div><div class="sc-val">$10.838.230</div><div class="sc-sub">Braskem SA · 1,99 %</div></div>
+    <div class="sc" style="--sc-c:#00a048;"><div class="sc-ico">💵</div><div class="sc-lbl">Moneda Disponible</div><div class="sc-val">$1.698.042</div><div class="sc-sub">USD MEP + Cable + ARS</div></div>
+    <div class="sc" style="--sc-c:#2060a8;"><div class="sc-ico">📋</div><div class="sc-lbl">Bonos</div><div class="sc-val">$462.085.622</div><div class="sc-sub">9 instrumentos · 83,10 %</div></div>
+    <div class="sc" style="--sc-c:#e07820;"><div class="sc-ico">🔒</div><div class="sc-lbl">Caución Colocadora</div><div class="sc-val">$80.526.295</div><div class="sc-sub">Vto. 08/05/2026</div></div>
+    <div class="sc" style="--sc-c:#7a50a8;"><div class="sc-ico">🌎</div><div class="sc-lbl">Cedear (BAK)</div><div class="sc-val">$11.765.455</div><div class="sc-sub">Braskem SA · 2,12 %</div></div>
   </div>
 
   <div class="inv-grid">
     <div class="sec">
-      <div class="sh" style="--dc:#00a048;"><div class="dot"></div><h2>Moneda</h2><div class="st">$4.027,11</div></div>
+      <div class="sh" style="--dc:#00a048;"><div class="dot"></div><h2>Moneda</h2><div class="st">$1.698.041,96</div></div>
       <div class="rows">
-        <div class="row"><div class="rn"><strong>USD Dólar MEP</strong><span class="b bg">USD</span></div><div class="rv">1,59 USD<small>@ $1.430,16 → $2.273,95</small></div></div>
-        <div class="row"><div class="rn"><strong>USD Cable</strong><span class="b bg">USDC</span></div><div class="rv">1,18 USDC<small>@ $1.485,31 → $1.752,67</small></div></div>
-        <div class="row"><div class="rn"><strong>Pesos ARS</strong><span class="b bo">ARS</span></div><div class="rv">$0,49</div></div>
+        <div class="row"><div class="rn"><strong>USD Dólar MEP</strong><span class="b bg">USD</span></div><div class="rv">1.177,47 USD<small>@ $1.442,43 → $1.698.418</small></div></div>
+        <div class="row"><div class="rn"><strong>USD Cable</strong><span class="b bg">USDC</span></div><div class="rv">1,18 USDC<small>@ $1.500,76 → $1.771</small></div></div>
+        <div class="row"><div class="rn"><strong>Pesos ARS</strong><span class="b bo">ARS</span></div><div class="rv">-$2.146,99<small>saldo deudor ARS</small></div></div>
       </div>
     </div>
     <div class="sec">
-      <div class="sh" style="--dc:#e07820;"><div class="dot"></div><h2>Caución Colocadora</h2><div class="st">$79.427.318,70</div></div>
+      <div class="sh" style="--dc:#e07820;"><div class="dot"></div><h2>Caución Colocadora</h2><div class="st">$80.526.294,74</div></div>
       <div class="rows">
-        <div class="row"><div class="rn"><strong>CC — Caución al 10/04/2026</strong><span class="b br">Vto 10/04</span></div><div class="rv">$79.427.318,70<small>14,62 % del portfolio</small></div></div>
+        <div class="row"><div class="rn"><strong>CC — Caución al 08/05/2026</strong><span class="b br">Vto 08/05</span></div><div class="rv">$80.526.294,74<small>14,48 % del portfolio</small></div></div>
       </div>
-      <div style="padding:.6rem 1.3rem .75rem;border-top:1px solid var(--border);font-size:1.22rem;color:var(--text2);">⚠️ <strong>Vence el 10/04/2026</strong> — Fondos disponibles para reinversión.</div>
+      <div style="padding:.6rem 1.3rem .75rem;border-top:1px solid var(--border);font-size:1.22rem;color:var(--text2);">⚠️ <strong>Vence el 08/05/2026</strong> — Renovación de caución. Fondos disponibles al vencimiento.</div>
     </div>
     <div class="sec">
-      <div class="sh" style="--dc:#7a50a8;"><div class="dot"></div><h2>Cedear</h2><div class="st">$10.838.230,00</div></div>
+      <div class="sh" style="--dc:#7a50a8;"><div class="dot"></div><h2>Cedear</h2><div class="st">$11.765.455,00</div></div>
       <div class="rows">
-        <div class="row"><div class="rn"><strong>BAK — Braskem SA</strong><span class="b bb">Cedear</span></div><div class="rv">4.121 u.<small>@ $2.630,00 · <span class="var-neg">▼ -21,6 % vs 06/03</span></small></div></div>
+        <div class="row"><div class="rn"><strong>BAK — Braskem SA</strong><span class="b bb">Cedear</span></div><div class="rv">4.121 u.<small>@ $2.855,00 · <span class="var-pos">▲ +8,5 % vs 30/04</span></small></div></div>
       </div>
-      <div style="padding:.6rem 1.3rem .75rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);">06/03: $3.522,50 → 07/04: $2.630,00 · Var.: <span class="var-neg">-$3.678.018</span></div>
+      <div style="padding:.6rem 1.3rem .75rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);">06/03: $3.522,50 → 30/04: $2.630,00 · Var.: <span class="var-neg">-$3.678.018</span></div>
     </div>
     <div class="sec full">
-      <div class="sh" style="--dc:#2060a8;"><div class="dot"></div><h2>Bonos — Detalle al 07/04/2026</h2><div class="st">$453.137.387,19</div></div>
+      <div class="sh" style="--dc:#2060a8;"><div class="dot"></div><h2>Bonos — Detalle al 30/04/2026</h2><div class="st">$462.085.622,19</div></div>
       <table class="asset-table">
         <thead><tr><th>Ticker</th><th>Descripción</th><th class="right">Unidades</th><th class="right">Precio</th><th class="right">Total ARS</th><th class="right">% Portfolio</th></tr></thead>
         <tbody>
-          <tr><td><span class="ticker">YM37O</span></td><td><div class="desc">ON YPF Clase 37 Vto. 07/05/2027</div></td><td class="mono right">72.992</td><td class="mono right">$1.496,90</td><td class="mono right">$109.261.725</td><td class="mono right" style="color:#2060a8;font-weight:700;">20,11 %</td></tr>
-          <tr><td><span class="ticker">S31G6</span><span class="b bn" style="font-size:1.04rem;">NUEVO</span></td><td><div class="desc">Letra Tesoro Nacional Capitalizable 31/08/2026</div></td><td class="mono right">71.077.647</td><td class="mono right">$1,15</td><td class="mono right">$81.469.199</td><td class="mono right" style="color:#2060a8;font-weight:700;">15,00 %</td></tr>
-          <tr><td><span class="ticker">AL30</span></td><td><div class="desc">Bono Rep. Argentina USD Step Up 2030</div></td><td class="mono right">66.961</td><td class="mono right">$885,70</td><td class="mono right">$59.307.358</td><td class="mono right" style="color:#2060a8;font-weight:700;">10,92 %</td></tr>
-          <tr><td><span class="ticker">AL35</span></td><td><div class="desc">Bono Rep. Argentina USD Step Up 2035</div></td><td class="mono right">54.891</td><td class="mono right">$1.070,30</td><td class="mono right">$58.749.837</td><td class="mono right" style="color:#2060a8;font-weight:700;">10,82 %</td></tr>
-          <tr><td><span class="ticker">TLCPO</span></td><td><div class="desc">ON Telecom Argentina 9,25% Vto. 28/05/2033</div></td><td class="mono right">24.096</td><td class="mono right">$1.610,00</td><td class="mono right">$38.794.560</td><td class="mono right" style="color:#2060a8;font-weight:700;">7,14 %</td></tr>
-          <tr><td><span class="ticker">VSCVO</span></td><td><div class="desc">Vista Energy Argentina 8,5% Vto. 10/06/2033</div></td><td class="mono right">21.000</td><td class="mono right">$1.600,00</td><td class="mono right">$33.600.000</td><td class="mono right" style="color:#2060a8;font-weight:700;">6,19 %</td></tr>
-          <tr><td><span class="ticker">YFCJO</span></td><td><div class="desc">ON YPF Energía Eléctrica Cl. XVIII Vto. 16/10/2032</div></td><td class="mono right">19.000</td><td class="mono right">$1.584,00</td><td class="mono right">$30.096.000</td><td class="mono right" style="color:#2060a8;font-weight:700;">5,54 %</td></tr>
-          <tr><td><span class="ticker">BPOB7</span></td><td><div class="desc">BOPREAL Serie 1B Vto. 31/10/2027</div></td><td class="mono right">17.347</td><td class="mono right">$1.473,00</td><td class="mono right">$25.552.131</td><td class="mono right" style="color:#2060a8;font-weight:700;">4,70 %</td></tr>
-          <tr><td><span class="ticker">AL41</span><span class="b bn" style="font-size:1.04rem;">NUEVO</span></td><td><div class="desc">Bono Rep. Argentina USD Step Up 2041</div></td><td class="mono right">16.318</td><td class="mono right">$999,30</td><td class="mono right">$16.306.577</td><td class="mono right" style="color:#2060a8;font-weight:700;">3,00 %</td></tr>
-          <tr style="background:var(--surface2);"><td colspan="4" style="font-weight:700;font-size:1.06rem;">Subtotal Bonos</td><td class="mono right" style="font-weight:700;font-size:1.06rem;">$453.137.387</td><td class="mono right" style="font-weight:700;color:#2060a8;font-size:1.06rem;">83,40 %</td></tr>
+          <tr><td><span class="ticker">YM37O</span></td><td><div class="desc">ON YPF Clase 37 Vto. 07/05/2027</div></td><td class="mono right">72.992</td><td class="mono right">$1.507,90</td><td class="mono right">$110.064.637</td><td class="mono right" style="color:#2060a8;font-weight:700;">19,79 %</td></tr>
+          <tr><td><span class="ticker">S31G6</span><span class="b bn" style="font-size:1.04rem;">NUEVO</span></td><td><div class="desc">Letra Tesoro Nacional Capitalizable 31/08/2026</div></td><td class="mono right">71.077.647</td><td class="mono right">$1,17</td><td class="mono right">$83.480.696</td><td class="mono right" style="color:#2060a8;font-weight:700;">15,01 %</td></tr>
+          <tr><td><span class="ticker">AL30</span></td><td><div class="desc">Bono Rep. Argentina USD Step Up 2030</div></td><td class="mono right">66.961</td><td class="mono right">$913,20</td><td class="mono right">$61.148.785</td><td class="mono right" style="color:#2060a8;font-weight:700;">11,00 %</td></tr>
+          <tr><td><span class="ticker">AL35</span></td><td><div class="desc">Bono Rep. Argentina USD Step Up 2035</div></td><td class="mono right">54.891</td><td class="mono right">$1.111,00</td><td class="mono right">$60.983.901</td><td class="mono right" style="color:#2060a8;font-weight:700;">10,97 %</td></tr>
+          <tr><td><span class="ticker">TLCPO</span></td><td><div class="desc">ON Telecom Argentina 9,25% Vto. 28/05/2033</div></td><td class="mono right">24.096</td><td class="mono right">$1.674,00</td><td class="mono right">$40.336.704</td><td class="mono right" style="color:#2060a8;font-weight:700;">7,26 %</td></tr>
+          <tr><td><span class="ticker">VSCVO</span></td><td><div class="desc">Vista Energy Argentina 8,5% Vto. 10/06/2033</div></td><td class="mono right">21.000</td><td class="mono right">$1.643,40</td><td class="mono right">$34.511.400</td><td class="mono right" style="color:#2060a8;font-weight:700;">6,21 %</td></tr>
+          <tr><td><span class="ticker">YFCJO</span></td><td><div class="desc">ON YPF Energía Eléctrica Cl. XVIII Vto. 16/10/2032</div></td><td class="mono right">19.000</td><td class="mono right">$1.547,30</td><td class="mono right">$29.398.700</td><td class="mono right" style="color:#2060a8;font-weight:700;">5,29 %</td></tr>
+          <tr><td><span class="ticker">BPOB7</span></td><td><div class="desc">BOPREAL Serie 1B Vto. 31/10/2027</div></td><td class="mono right">17.347</td><td class="mono right">$1.451,00</td><td class="mono right">$25.170.497</td><td class="mono right" style="color:#2060a8;font-weight:700;">4,53 %</td></tr>
+          <tr><td><span class="ticker">AL41</span><span class="b bn" style="font-size:1.04rem;">NUEVO</span></td><td><div class="desc">Bono Rep. Argentina USD Step Up 2041</div></td><td class="mono right">16.318</td><td class="mono right">$1.041,20</td><td class="mono right">$16.990.302</td><td class="mono right" style="color:#2060a8;font-weight:700;">3,06 %</td></tr>
+          <tr style="background:var(--surface2);"><td colspan="4" style="font-weight:700;font-size:1.06rem;">Subtotal Bonos</td><td class="mono right" style="font-weight:700;font-size:1.06rem;">$462.085.622</td><td class="mono right" style="font-weight:700;color:#2060a8;font-size:1.06rem;">83,10 %</td></tr>
         </tbody>
       </table>
     </div>
     <div class="chart-wrap full">
-      <div class="sh" style="--dc:#00a048;"><div class="dot"></div><h2>Distribución del Portfolio Inviu — 07/04/2026</h2></div>
+      <div class="sh" style="--dc:#00a048;"><div class="dot"></div><h2>Distribución del Portfolio Inviu — 30/04/2026</h2></div>
       <div class="dist-bar-wrap">
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">ON YPF (YM37O + YFCJO)</span><span class="dbi-val">$139.357.725</span><span class="dbi-pct">25,65 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:25.65%;background:#2060a8;"></div></div></div>
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Caución Colocadora (Vto 10/04)</span><span class="dbi-val">$79.427.319</span><span class="dbi-pct">14,62 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:14.62%;background:#e07820;"></div></div></div>
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Letra Tesoro S31G6 (Vto 31/08/26)</span><span class="dbi-val">$81.469.199</span><span class="dbi-pct">15,00 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:15.00%;background:#3a7aaa;"></div></div></div>
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Bonos Soberanos (AL30 + AL35 + AL41)</span><span class="dbi-val">$134.363.773</span><span class="dbi-pct">24,74 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:24.74%;background:#1a4a9a;"></div></div></div>
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">ON Corporativas (TLCPO + VSCVO)</span><span class="dbi-val">$72.394.560</span><span class="dbi-pct">13,33 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:13.33%;background:#4888cc;"></div></div></div>
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">BOPREAL (BPOB7)</span><span class="dbi-val">$25.552.131</span><span class="dbi-pct">4,70 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:4.70%;background:#7aacee;"></div></div></div>
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Cedear (BAK Braskem)</span><span class="dbi-val">$10.838.230</span><span class="dbi-pct">1,99 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:1.99%;background:#7a50a8;"></div></div></div>
-        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Moneda USD disponible</span><span class="dbi-val">$4.027</span><span class="dbi-pct">0,00 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:0.5%;background:#1a9a50;min-width:3px;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">ON YPF (YM37O + YFCJO)</span><span class="dbi-val">$139.463.337</span><span class="dbi-pct">25,65 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:25.39%;background:#2060a8;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Caución Colocadora (Vto 08/05)</span><span class="dbi-val">$80.526.295</span><span class="dbi-pct">14,62 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:14.48%;background:#e07820;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Letra Tesoro S31G6 (Vto 31/08/26)</span><span class="dbi-val">$83.480.696</span><span class="dbi-pct">15,01 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:15.01%;background:#3a7aaa;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Bonos Soberanos (AL30 + AL35 + AL41)</span><span class="dbi-val">$135.122.988</span><span class="dbi-pct">24,74 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:24.29%;background:#1a4a9a;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">ON Corporativas (TLCPO + VSCVO)</span><span class="dbi-val">$74.848.104</span><span class="dbi-pct">13,33 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:13.46%;background:#4888cc;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">BOPREAL (BPOB7)</span><span class="dbi-val">$25.170.497</span><span class="dbi-pct">4,53 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:4.52%;background:#7aacee;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Cedear (BAK Braskem)</span><span class="dbi-val">$11.765.455</span><span class="dbi-pct">2,12 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:2.12%;background:#7a50a8;"></div></div></div>
+        <div class="dist-bar-item"><div class="dbi-head"><span class="dbi-name">Moneda USD disponible</span><span class="dbi-val">$1.698.042</span><span class="dbi-pct">0,00 %</span></div><div class="dbi-track"><div class="dbi-fill" style="width:0.31%;background:#1a9a50;min-width:3px;"></div></div></div>
       </div>
     </div>
   </div>
@@ -519,12 +593,12 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
     <div>
       <div class="hh-label">Seguimiento Histórico — Portfolio Inviu Cta. 232201</div>
       <div class="hh-title">Evolución del Portfolio Inviu</div>
-      <div class="hh-sub">2 períodos registrados · 06/03/2026 → 07/04/2026 (32 días)</div>
+      <div class="hh-sub">3 períodos · 06/03 → 07/04 → 30/04/2026 · 55 días acumulados</div>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-left:auto;">
-      <div class="xpill"><div class="xp-lbl">Variación</div><div class="xp-val" style="color:#7aff9e;">+$1.126.550</div><div class="xp-sub" style="color:#7aff9e;">+0,21 %</div></div>
+      <div class="xpill"><div class="xp-lbl">Var. total (vs 06/03)</div><div class="xp-val" style="color:#7aff9e;">+$13.795.001</div><div class="xp-sub" style="color:#7aff9e;">+2,55 %</div></div>
       <div class="xpill"><div class="xp-lbl">06/03 — Inicio</div><div class="xp-val">$542.280.412</div><div class="xp-sub" style="color:rgba(255,255,255,.4);">Referencia</div></div>
-      <div class="xpill"><div class="xp-lbl">07/04 — Actual</div><div class="xp-val">$543.406.963</div><div class="xp-sub" style="color:rgba(255,255,255,.4);">Último dato</div></div>
+      <div class="xpill"><div class="xp-lbl">30/04 — Actual</div><div class="xp-val">$556.075.414</div><div class="xp-sub" style="color:rgba(255,255,255,.4);">Último dato</div></div>
     </div>
   </div>
   <div class="hist-grid">
@@ -534,10 +608,19 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
         <div class="tl-item">
           <div class="tl-dot-wrap"><div class="tl-dot" style="background:#7a3a8a;"></div><div class="tl-line"></div></div>
           <div>
-            <div class="tl-date">Martes 07 de Abril 2026 — ACTUAL</div>
-            <div class="tl-total">$543.406.963,00</div>
-            <div class="tl-var" style="color:#1a9a50;">▲ +$1.126.550 (+0,21 % vs 06/03)</div>
-            <div class="tl-detail">Caución: $79.427.319 (Vto 10/04) · Bonos: $453.137.387<br>Cedear BAK: $10.838.230 · Moneda: $4.027<br>TC MEP: $1.430,16 · TC CCL: $1.485,31<br><em style="color:rgba(255,255,255,.4);">Nuevos: S31G6 Letra Tesoro · AL41 Bono 2041</em></div>
+            <div class="tl-date">Jueves 30 de Abril 2026 — ACTUAL</div>
+            <div class="tl-total">$556.075.413,81</div>
+            <div class="tl-var" style="color:#1a9a50;">▲ +$12.668.451 (+2,34 % vs 07/04) · +$13.795.001 (+2,55 % vs 06/03)</div>
+            <div class="tl-detail">Caución: $80.526.295 (Vto 08/05) · Bonos: $462.085.622<br>Cedear BAK: $11.765.455 · Moneda: $1.698.042<br>TC MEP: $1.442,43 · TC CCL: $1.500,76</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot" style="background:#999;"></div><div class="tl-line"></div></div>
+          <div>
+            <div class="tl-date">Martes 07 de Abril 2026</div>
+            <div class="tl-total" style="color:var(--text2);">$543.406.963,00</div>
+            <div class="tl-var" style="color:#1a9a50;">▲ +$1.126.551 (+0,21 % vs 06/03)</div>
+            <div class="tl-detail">Caución: $79.427.319 (Vto 10/04) · Bonos: $453.137.387<br>Cedear BAK: $10.838.230 · Moneda: $4.027<br>TC MEP: $1.430,16 · TC CCL: $1.485,31</div>
           </div>
         </div>
         <div class="tl-item">
@@ -546,47 +629,70 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
             <div class="tl-date">Jueves 06 de Marzo 2026 — Inicio</div>
             <div class="tl-total" style="color:var(--text2);">$542.280.412,46</div>
             <div class="tl-var" style="color:var(--text3);">— Punto de referencia inicial</div>
-            <div class="tl-detail">Caución: $158.402.111 (Vto 10/03) · Bonos: $331.691.280<br>Moneda: $37.670.799 · Cedear BAK: $14.516.223<br>TC MEP: $1.433,21 · TC CCL: $1.466,96</div>
+            <div class="tl-detail">Caución: $158.402.111 (Vto 10/03) · Bonos: $331.691.280<br>Cedear BAK: $14.516.223 · Moneda: $37.670.799<br>TC MEP: $1.433,21 · TC CCL: $1.466,96</div>
           </div>
         </div>
       </div>
     </div>
     <div class="sec">
-      <div class="sh" style="--dc:#7a3a8a;"><div class="dot"></div><h2>Evolución Inviu (ARS)</h2></div>
+      <div class="sh" style="--dc:#7a3a8a;"><div class="dot"></div><h2>Evolución Inviu — 3 períodos (ARS)</h2></div>
       <div class="evo-chart">
         <div class="evo-bars">
           <div class="evo-bar-wrap">
-            <div class="evo-bar-val" style="color:var(--text2);">$542,3M</div>
-            <div class="evo-bar" style="height:99.8%;background:linear-gradient(180deg,#7a3a8a,#4a1a6a);"></div>
+            <div class="evo-bar-val" style="color:var(--text3);">$542,3M</div>
+            <div class="evo-bar" style="height:97.5%;background:linear-gradient(180deg,#aaa,#888);"></div>
             <div class="evo-bar-lbl">06 Mar</div>
           </div>
           <div class="evo-bar-wrap">
-            <div class="evo-bar-val" style="color:#1a9a50;">$543,4M</div>
-            <div class="evo-bar" style="height:100%;background:linear-gradient(180deg,#4a1a8a,#7a3a8a);"></div>
+            <div class="evo-bar-val" style="color:var(--text2);">$543,4M</div>
+            <div class="evo-bar" style="height:97.7%;background:linear-gradient(180deg,#7a3a8a,#4a1a6a);"></div>
             <div class="evo-bar-lbl">07 Abr</div>
           </div>
+          <div class="evo-bar-wrap">
+            <div class="evo-bar-val" style="color:#1a9a50;">$556,1M</div>
+            <div class="evo-bar" style="height:100%;background:linear-gradient(180deg,#4a1a8a,#7a3a8a);"></div>
+            <div class="evo-bar-lbl">30 Abr</div>
+          </div>
         </div>
-        <div style="padding-top:.6rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);text-align:center;">Variación: <strong style="color:#1a9a50;">+$1.126.550 (+0,21 %)</strong> en 32 días</div>
+        <div style="padding-top:.6rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1rem;color:var(--text3);text-align:center;">
+          06/03→07/04: <strong style="color:#7a3a8a;">+$1.126.551 (+0,21 %)</strong> &nbsp;·&nbsp; 07/04→30/04: <strong style="color:#1a9a50;">+$12.668.451 (+2,34 %)</strong>
+        </div>
       </div>
     </div>
     <div class="sec full">
-      <div class="sh" style="--dc:#7a3a8a;"><div class="dot"></div><h2>Comparación por Activo — 06/03 vs 07/04/2026</h2></div>
+      <div class="sh" style="--dc:#7a3a8a;"><div class="dot"></div><h2>Comparación por Activo — 06/03 vs 07/04 vs 30/04/2026</h2></div>
       <table class="comp-table">
-        <thead><tr><th>Activo</th><th>Tipo</th><th class="right">Unid. 06/03</th><th class="right">Unid. 07/04</th><th class="right">Precio 06/03</th><th class="right">Precio 07/04</th><th class="right">Total 06/03</th><th class="right">Total 07/04</th><th class="right">Diferencia</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Activo</th><th>Tipo</th>
+            <th class="right">Unid.</th>
+            <th class="right">Precio 06/03</th><th class="right">Total 06/03</th>
+            <th class="right">Precio 07/04</th><th class="right">Total 07/04</th>
+            <th class="right">Precio 30/04</th><th class="right">Total 30/04</th>
+            <th class="right">Var. Total</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td><span class="ticker">YM37O</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">72.992</td><td class="mono right col-new">72.992</td><td class="mono right col-old">$1.480,00</td><td class="mono right col-new">$1.496,90</td><td class="mono right col-old">$108.028.160</td><td class="mono right col-new">$109.261.725</td><td class="right"><span class="var-pos">+$1.233.565</span></td></tr>
-          <tr><td><span class="ticker">AL30</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">66.961</td><td class="mono right col-new">66.961</td><td class="mono right col-old">$869,10</td><td class="mono right col-new">$885,70</td><td class="mono right col-old">$58.195.805</td><td class="mono right col-new">$59.307.358</td><td class="right"><span class="var-pos">+$1.111.553</span></td></tr>
-          <tr><td><span class="ticker">AL35</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">35.266</td><td class="mono right col-new" style="color:#1a9a50;font-weight:700;">54.891</td><td class="mono right col-old">$1.102,50</td><td class="mono right col-new">$1.070,30</td><td class="mono right col-old">$38.880.765</td><td class="mono right col-new">$58.749.837</td><td class="right"><span class="var-pos">+$19.869.072</span></td></tr>
-          <tr><td><span class="ticker">AL41</span><span class="b bn" style="font-size:1.04rem;">NUEVO</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">—</td><td class="mono right col-new" style="color:#1a9a50;font-weight:700;">16.318</td><td class="mono right col-old">—</td><td class="mono right col-new">$999,30</td><td class="mono right col-old">—</td><td class="mono right col-new">$16.306.577</td><td class="right"><span class="var-pos">+$16.306.577</span></td></tr>
-          <tr><td><span class="ticker">S31G6</span><span class="b bn" style="font-size:1.04rem;">NUEVO</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">—</td><td class="mono right col-new" style="color:#1a9a50;font-weight:700;">71.077.647</td><td class="mono right col-old">—</td><td class="mono right col-new">$1,15</td><td class="mono right col-old">—</td><td class="mono right col-new">$81.469.199</td><td class="right"><span class="var-pos">+$81.469.199</span></td></tr>
-          <tr><td><span class="ticker">TLCPO</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">24.096</td><td class="mono right col-new">24.096</td><td class="mono right col-old">$1.594,00</td><td class="mono right col-new">$1.610,00</td><td class="mono right col-old">$38.409.024</td><td class="mono right col-new">$38.794.560</td><td class="right"><span class="var-pos">+$385.536</span></td></tr>
-          <tr><td><span class="ticker">VSCVO</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">21.000</td><td class="mono right col-new">21.000</td><td class="mono right col-old">$1.588,10</td><td class="mono right col-new">$1.600,00</td><td class="mono right col-old">$33.350.100</td><td class="mono right col-new">$33.600.000</td><td class="right"><span class="var-pos">+$249.900</span></td></tr>
-          <tr><td><span class="ticker">YFCJO</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">19.000</td><td class="mono right col-new">19.000</td><td class="mono right col-old">$1.554,50</td><td class="mono right col-new">$1.584,00</td><td class="mono right col-old">$29.535.500</td><td class="mono right col-new">$30.096.000</td><td class="right"><span class="var-pos">+$560.500</span></td></tr>
-          <tr><td><span class="ticker">BPOB7</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-old">17.347</td><td class="mono right col-new">17.347</td><td class="mono right col-old">$1.458,00</td><td class="mono right col-new">$1.473,00</td><td class="mono right col-old">$25.291.926</td><td class="mono right col-new">$25.552.131</td><td class="right"><span class="var-pos">+$260.205</span></td></tr>
-          <tr><td><span class="ticker">BAK</span></td><td><span class="b" style="background:rgba(122,80,168,.1);color:#7a50a8;border-color:rgba(122,80,168,.2);">Cedear</span></td><td class="mono right col-old">4.121</td><td class="mono right col-new">4.121</td><td class="mono right col-old">$3.522,50</td><td class="mono right col-new">$2.630,00</td><td class="mono right col-old">$14.516.223</td><td class="mono right col-new">$10.838.230</td><td class="right"><span class="var-neg">-$3.677.993</span></td></tr>
-          <tr><td><strong>Caución</strong></td><td><span class="b" style="background:rgba(224,120,32,.1);color:#e07820;border-color:rgba(224,120,32,.2);">Caución</span></td><td class="mono right col-old" colspan="2">Vto 10/03</td><td class="mono right col-old">$158.402.111</td><td class="mono right col-new">$79.427.319</td><td class="mono right col-old">$158.402.111</td><td class="mono right col-new">$79.427.319</td><td class="right"><span class="var-neg">-$78.974.792</span></td></tr>
-          <tr><td><strong>Moneda USD</strong></td><td><span class="b bg">Moneda</span></td><td class="mono right col-old" colspan="2">TC $1.433,21</td><td class="mono right col-old">$37.670.799</td><td class="mono right col-new">$4.027</td><td class="mono right col-old">$37.670.799</td><td class="mono right col-new">$4.027</td><td class="right"><span class="var-neg">-$37.666.772</span></td></tr>
-          <tr style="background:var(--surface2);"><td colspan="6" style="font-weight:700;font-size:1.08rem;">TOTAL INVIU</td><td class="mono right col-old" style="font-weight:700;font-size:1.08rem;">$542.280.412</td><td class="mono right col-new" style="font-weight:700;font-size:1.08rem;">$543.406.963</td><td class="right"><span class="var-pos" style="font-size:1.1rem;">+$1.126.550 (+0,21 %)</span></td></tr>
+          <tr><td><span class="ticker">YM37O</span></td><td><span class="b bb">Bono</span></td><td class="mono right">72.992</td><td class="mono right col-old">$1.480,00</td><td class="mono right col-old">$108.028.160</td><td class="mono right" style="color:var(--text2);">$1.496,90</td><td class="mono right" style="color:var(--text2);">$109.261.725</td><td class="mono right col-new">$1.507,90</td><td class="mono right col-new">$110.064.637</td><td class="right"><span class="var-pos">+$2.036.477</span></td></tr>
+          <tr><td><span class="ticker">AL30</span></td><td><span class="b bb">Bono</span></td><td class="mono right">66.961</td><td class="mono right col-old">$869,10</td><td class="mono right col-old">$58.195.805</td><td class="mono right" style="color:var(--text2);">$885,70</td><td class="mono right" style="color:var(--text2);">$59.307.358</td><td class="mono right col-new">$913,20</td><td class="mono right col-new">$61.148.785</td><td class="right"><span class="var-pos">+$2.952.980</span></td></tr>
+          <tr><td><span class="ticker">AL35</span></td><td><span class="b bb">Bono</span></td><td class="mono right" style="color:#1a9a50;font-weight:700;">35.266→54.891</td><td class="mono right col-old">$1.102,50</td><td class="mono right col-old">$38.880.765</td><td class="mono right" style="color:var(--text2);">$1.070,30</td><td class="mono right" style="color:var(--text2);">$58.749.837</td><td class="mono right col-new">$1.111,00</td><td class="mono right col-new">$60.983.901</td><td class="right"><span class="var-pos">+$22.103.136</span></td></tr>
+          <tr><td><span class="ticker">AL41</span><span class="b bn" style="font-size:.8rem;">NUEVO</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-new" style="color:#1a9a50;">16.318</td><td class="mono right col-old">—</td><td class="mono right col-old">—</td><td class="mono right" style="color:var(--text2);">$999,30</td><td class="mono right" style="color:var(--text2);">$16.306.577</td><td class="mono right col-new">$1.041,20</td><td class="mono right col-new">$16.990.302</td><td class="right"><span class="var-pos">+$16.990.302</span></td></tr>
+          <tr><td><span class="ticker">S31G6</span><span class="b bn" style="font-size:.8rem;">NUEVO</span></td><td><span class="b bb">Bono</span></td><td class="mono right col-new" style="color:#1a9a50;">71.077.647</td><td class="mono right col-old">—</td><td class="mono right col-old">—</td><td class="mono right" style="color:var(--text2);">$1,15</td><td class="mono right" style="color:var(--text2);">$81.469.199</td><td class="mono right col-new">$1,17</td><td class="mono right col-new">$83.480.696</td><td class="right"><span class="var-pos">+$83.480.696</span></td></tr>
+          <tr><td><span class="ticker">TLCPO</span></td><td><span class="b bb">Bono</span></td><td class="mono right">24.096</td><td class="mono right col-old">$1.594,00</td><td class="mono right col-old">$38.409.024</td><td class="mono right" style="color:var(--text2);">$1.610,00</td><td class="mono right" style="color:var(--text2);">$38.794.560</td><td class="mono right col-new">$1.674,00</td><td class="mono right col-new">$40.336.704</td><td class="right"><span class="var-pos">+$1.927.680</span></td></tr>
+          <tr><td><span class="ticker">VSCVO</span></td><td><span class="b bb">Bono</span></td><td class="mono right">21.000</td><td class="mono right col-old">$1.588,10</td><td class="mono right col-old">$33.350.100</td><td class="mono right" style="color:var(--text2);">$1.600,00</td><td class="mono right" style="color:var(--text2);">$33.600.000</td><td class="mono right col-new">$1.643,40</td><td class="mono right col-new">$34.511.400</td><td class="right"><span class="var-pos">+$1.161.300</span></td></tr>
+          <tr><td><span class="ticker">YFCJO</span></td><td><span class="b bb">Bono</span></td><td class="mono right">19.000</td><td class="mono right col-old">$1.554,50</td><td class="mono right col-old">$29.535.500</td><td class="mono right" style="color:var(--text2);">$1.538,10</td><td class="mono right" style="color:var(--text2);">$29.223.900</td><td class="mono right col-new">$1.547,30</td><td class="mono right col-new">$29.398.700</td><td class="right"><span class="var-neg">-$136.800</span></td></tr>
+          <tr><td><span class="ticker">BPOB7</span></td><td><span class="b bb">Bono</span></td><td class="mono right">17.347</td><td class="mono right col-old">$1.458,00</td><td class="mono right col-old">$25.291.926</td><td class="mono right" style="color:var(--text2);">$1.452,00</td><td class="mono right" style="color:var(--text2);">$25.187.844</td><td class="mono right col-new">$1.451,00</td><td class="mono right col-new">$25.170.497</td><td class="right"><span class="var-neg">-$121.429</span></td></tr>
+          <tr><td><span class="ticker">BAK</span></td><td><span class="b" style="background:rgba(122,80,168,.1);color:#7a50a8;border-color:rgba(122,80,168,.2);">Cedear</span></td><td class="mono right">4.121</td><td class="mono right col-old">$3.522,50</td><td class="mono right col-old">$14.516.223</td><td class="mono right" style="color:var(--text2);">$2.630,00</td><td class="mono right" style="color:var(--text2);">$10.838.230</td><td class="mono right col-new">$2.855,00</td><td class="mono right col-new">$11.765.455</td><td class="right"><span class="var-neg">-$2.750.768</span></td></tr>
+          <tr><td><strong>Caución</strong></td><td><span class="b" style="background:rgba(224,120,32,.1);color:#e07820;border-color:rgba(224,120,32,.2);">Caución</span></td><td class="mono right">—</td><td class="mono right col-old">$158.402.111</td><td class="mono right col-old">$158.402.111</td><td class="mono right" style="color:var(--text2);">—</td><td class="mono right" style="color:var(--text2);">$79.427.319</td><td class="mono right col-new">—</td><td class="mono right col-new">$80.526.295</td><td class="right"><span class="var-neg">-$77.875.816</span></td></tr>
+          <tr><td><strong>Moneda USD</strong></td><td><span class="b bg">Moneda</span></td><td class="mono right">—</td><td class="mono right col-old" style="color:var(--text3);">TC $1.433</td><td class="mono right col-old">$37.670.799</td><td class="mono right" style="color:var(--text2);">TC $1.422</td><td class="mono right" style="color:var(--text2);">$37.387.118</td><td class="mono right col-new">TC $1.442</td><td class="mono right col-new">$1.698.042</td><td class="right"><span class="var-neg">-$35.972.757</span></td></tr>
+          <tr style="background:var(--surface2);">
+            <td colspan="2" style="font-weight:700;font-size:1rem;">TOTAL INVIU</td>
+            <td></td>
+            <td></td><td class="mono right col-old" style="font-weight:700;">$542.280.412</td>
+            <td></td><td class="mono right" style="font-weight:700;color:var(--text2);">$543.406.963</td>
+            <td></td><td class="mono right col-new" style="font-weight:700;">$556.075.414</td>
+            <td class="right"><span class="var-pos" style="font-size:.95rem;">+$13.795.001 (+2,55 %)</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -599,12 +705,12 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
     <div>
       <div class="hh-label">Seguimiento Histórico — Disponible Total General</div>
       <div class="hh-title">Evolución del Disponible Total</div>
-      <div class="hh-sub">Todas las fuentes: Bancos · Inversiones · Divisas · Caja · 2 períodos (32 días)</div>
+      <div class="hh-sub">3 períodos · 06/03 → 07/04 → 30/04/2026 · 55 días acumulados</div>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-left:auto;">
-      <div class="xpill"><div class="xp-lbl">Variación</div><div class="xp-val" style="color:#7aff9e;">+$23.933.669</div><div class="xp-sub" style="color:#7aff9e;">+4,03 %</div></div>
-      <div class="xpill"><div class="xp-lbl">06/03 — Inicio</div><div class="xp-val">$594.493.081</div><div class="xp-sub" style="color:rgba(255,255,255,.4);">Referencia</div></div>
-      <div class="xpill"><div class="xp-lbl">07/04 — Actual</div><div class="xp-val">$618.426.750</div><div class="xp-sub" style="color:rgba(255,255,255,.4);">Último dato</div></div>
+      <div class="xpill"><div class="xp-lbl">Var. total (vs 06/03)</div><div class="xp-val" style="color:#7aff9e;">+$182.855.254</div><div class="xp-sub" style="color:#7aff9e;">+31,3 %</div></div>
+      <div class="xpill"><div class="xp-lbl">06/03 — Inicio</div><div class="xp-val">$583.443.940</div><div class="xp-sub" style="color:rgba(255,255,255,.4);">Referencia</div></div>
+      <div class="xpill"><div class="xp-lbl">30/04 — Actual</div><div class="xp-val">$766.299.194</div><div class="xp-sub" style="color:rgba(255,255,255,.4);">Último dato</div></div>
     </div>
   </div>
 
@@ -615,112 +721,136 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
         <div class="tl-item">
           <div class="tl-dot-wrap"><div class="tl-dot" style="background:#b03030;"></div><div class="tl-line"></div></div>
           <div>
-            <div class="tl-date">Martes 07 de Abril 2026 — ACTUAL</div>
-            <div class="tl-total">$618.426.749,97</div>
-            <div class="tl-var" style="color:#1a9a50;">▲ +$23.933.669 (+4,03 % vs 06/03)</div>
-            <div class="tl-detail">Bancos: $6.169.547 · Inviu: $543.406.963 · FCI: $45.294.558<br>USD: $21.454.248 (@ $1.392,50) · EUR: $1.201.835 (@ $1.615)<br>Caja: $899.600</div>
+            <div class="tl-date">Jueves 30 de Abril 2026 — ACTUAL</div>
+            <div class="tl-total">$766.299.193,51</div>
+            <div class="tl-var" style="color:#1a9a50;">▲ +$158.594.345 (+26,1 % vs 07/04) · +$182.855.254 (+31,3 % vs 06/03)</div>
+            <div class="tl-detail">Bancos: $10.919.757 · Inviu: $556.075.414 · FCI: $178.999.868<br>USD: $13.771.387 (@ $1.391, propio) · EUR: $4.888.368 (@ $1.633,72)<br>Caja: $1.644.400</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot-wrap"><div class="tl-dot" style="background:#999;"></div><div class="tl-line"></div></div>
+          <div>
+            <div class="tl-date">Martes 07 de Abril 2026</div>
+            <div class="tl-total" style="color:var(--text2);">$607.704.848,54</div>
+            <div class="tl-var" style="color:#1a9a50;">▲ +$24.260.909 (+4,16 % vs 06/03)</div>
+            <div class="tl-detail">Bancos: $6.169.547 · Inviu: $543.406.963 · FCI: $45.294.558<br>USD: $10.732.346 (@ $1.392,50) · EUR: $4.888.368 (@ $1.615)<br>Caja: $899.600</div>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-dot-wrap"><div class="tl-dot" style="background:#ccc;"></div></div>
           <div>
             <div class="tl-date">Jueves 06 de Marzo 2026 — Inicio</div>
-            <div class="tl-total" style="color:var(--text2);">$594.493.080,88</div>
+            <div class="tl-total" style="color:var(--text2);">$583.443.939,63</div>
             <div class="tl-var" style="color:var(--text3);">— Punto de referencia inicial</div>
-            <div class="tl-detail">Bancos: $7.556.644 · Inviu: $542.280.412 · Fima: $19.574.234<br>USD: $22.652.723 (@ $1.435) · EUR: $1.291.447 (@ $1.690)<br>Caja: $1.137.620</div>
+            <div class="tl-detail">Bancos: $7.556.644 · Inviu: $542.280.412 · Fima: $19.574.234<br>USD: $11.603.582 (@ $1.435, propio) · EUR: $1.291.447 (@ $1.690)<br>Caja: $1.137.620</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="sec">
-      <div class="sh" style="--dc:#b03030;"><div class="dot"></div><h2>Evolución Total General (ARS)</h2></div>
+      <div class="sh" style="--dc:#b03030;"><div class="dot"></div><h2>Evolución Total General — 3 períodos (ARS)</h2></div>
       <div class="evo-chart">
         <div class="evo-bars">
           <div class="evo-bar-wrap">
-            <div class="evo-bar-val" style="color:var(--text2);">$594,5M</div>
-            <div class="evo-bar" style="height:96.1%;background:linear-gradient(180deg,#7a2020,#4a1010);"></div>
+            <div class="evo-bar-val" style="color:var(--text3);">$583,4M</div>
+            <div class="evo-bar" style="height:76.2%;background:linear-gradient(180deg,#aaa,#888);"></div>
             <div class="evo-bar-lbl">06 Mar</div>
           </div>
           <div class="evo-bar-wrap">
-            <div class="evo-bar-val" style="color:#1a9a50;">$618,4M</div>
-            <div class="evo-bar" style="height:100%;background:linear-gradient(180deg,#b03030,#7a1a1a);"></div>
+            <div class="evo-bar-val" style="color:var(--text2);">$607,7M</div>
+            <div class="evo-bar" style="height:79.3%;background:linear-gradient(180deg,#7a2020,#4a1010);"></div>
             <div class="evo-bar-lbl">07 Abr</div>
           </div>
+          <div class="evo-bar-wrap">
+            <div class="evo-bar-val" style="color:#1a9a50;">$766,3M</div>
+            <div class="evo-bar" style="height:100%;background:linear-gradient(180deg,#b03030,#7a1a1a);"></div>
+            <div class="evo-bar-lbl">30 Abr</div>
+          </div>
         </div>
-        <div style="padding-top:.6rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1.16rem;color:var(--text3);text-align:center;">Variación: <strong style="color:#1a9a50;">+$23.933.669 (+4,03 %)</strong> en 32 días</div>
+        <div style="padding-top:.6rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:1rem;color:var(--text3);text-align:center;">
+          06/03→07/04: <strong style="color:#7a2020;">+$24.260.909 (+4,16 %)</strong> &nbsp;·&nbsp; 07/04→30/04: <strong style="color:#1a9a50;">+$158.594.345 (+26,1 %)</strong> &nbsp;·&nbsp; Total: <strong style="color:#b03030;">+$182.855.254 (+31,3 %)</strong>
+        </div>
       </div>
     </div>
 
     <div class="sec full">
-      <div class="sh" style="--dc:#b03030;"><div class="dot"></div><h2>Comparación por Componente — 06/03 vs 07/04/2026</h2></div>
+      <div class="sh" style="--dc:#b03030;"><div class="dot"></div><h2>Comparación por Componente — 06/03 · 07/04 · 30/04/2026</h2></div>
       <table class="comp-table">
         <thead>
           <tr>
             <th>Componente</th>
             <th class="right">06/03/2026</th>
             <th class="right">07/04/2026</th>
-            <th class="right">Variación ARS</th>
+            <th class="right">30/04/2026</th>
+            <th class="right">Var. 06/03→30/04</th>
             <th class="right">Var. %</th>
-            <th class="right">% del Total 07/04</th>
+            <th class="right">% 30/04</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Bancos — Pesos</strong><div style="font-size:1.2rem;color:var(--text3);">6 entidades · ARS</div></td>
+            <td><strong>Bancos — Pesos</strong><div style="font-size:.88rem;color:var(--text3);">6 entidades · ARS</div></td>
             <td class="mono right col-old">$7.556.644</td>
-            <td class="mono right col-new">$6.169.547</td>
-            <td class="mono right"><span class="var-neg">-$1.387.097</span></td>
-            <td class="right"><span class="var-neg">-18,4 %</span></td>
-            <td class="mono right" style="color:#a07820;font-weight:700;">1,00 %</td>
+            <td class="mono right" style="color:var(--text2);font-family:'DM Mono',monospace;">$6.169.547</td>
+            <td class="mono right col-new">$10.919.757</td>
+            <td class="mono right"><span class="var-pos">+$3.363.113</span></td>
+            <td class="right"><span class="var-pos">+44,5 %</span></td>
+            <td class="mono right" style="color:#a07820;font-weight:700;">1,42 %</td>
           </tr>
           <tr>
-            <td><strong>Inviu — Portfolio</strong><div style="font-size:1.2rem;color:var(--text3);">Cta. Comitente 232201</div></td>
+            <td><strong>Inviu — Portfolio</strong><div style="font-size:.88rem;color:var(--text3);">Cta. Comitente 232201</div></td>
             <td class="mono right col-old">$542.280.412</td>
-            <td class="mono right col-new">$543.406.963</td>
-            <td class="mono right"><span class="var-pos">+$1.126.551</span></td>
-            <td class="right"><span class="var-pos">+0,21 %</span></td>
-            <td class="mono right" style="color:#2060a8;font-weight:700;">87,87 %</td>
+            <td class="mono right" style="color:var(--text2);font-family:'DM Mono',monospace;">$543.406.963</td>
+            <td class="mono right col-new">$556.075.414</td>
+            <td class="mono right"><span class="var-pos">+$13.795.002</span></td>
+            <td class="right"><span class="var-pos">+2,55 %</span></td>
+            <td class="mono right" style="color:#2060a8;font-weight:700;">72,57 %</td>
           </tr>
           <tr>
-            <td><strong>FCI Galicia $</strong><div style="font-size:1.2rem;color:var(--text3);">antes Fima Premium</div></td>
+            <td><strong>FCI Galicia $</strong><div style="font-size:.88rem;color:var(--text3);">antes Fima Premium</div></td>
             <td class="mono right col-old">$19.574.234</td>
-            <td class="mono right col-new">$45.294.558</td>
-            <td class="mono right"><span class="var-pos">+$25.720.324</span></td>
-            <td class="right"><span class="var-pos">+131,4 %</span></td>
-            <td class="mono right" style="color:#2060a8;font-weight:700;">7,32 %</td>
+            <td class="mono right" style="color:var(--text2);font-family:'DM Mono',monospace;">$45.294.558</td>
+            <td class="mono right col-new">$178.999.868</td>
+            <td class="mono right"><span class="var-pos">+$159.425.634</span></td>
+            <td class="right"><span class="var-pos">+814,5 %</span></td>
+            <td class="mono right" style="color:#2060a8;font-weight:700;">23,36 %</td>
           </tr>
           <tr>
-            <td><strong>Dólares Físicos</strong><div style="font-size:1.2rem;color:var(--text3);">USD · TC BNA</div></td>
-            <td class="mono right col-old">$22.652.723<small style="display:block;color:var(--text3);">@ $1.435</small></td>
-            <td class="mono right col-new">$21.454.248<small style="display:block;color:var(--text3);">@ $1.392,50</small></td>
-            <td class="mono right"><span class="var-neg">-$1.198.475</span></td>
-            <td class="right"><span class="var-neg">-5,29 %</span></td>
-            <td class="mono right" style="color:#1a9a50;font-weight:700;">3,47 %</td>
+            <td><strong>Dólares Físicos</strong><div style="font-size:.88rem;color:var(--text3);">USD propios · TC BNA</div></td>
+            <td class="mono right col-old">$11.603.582<small style="display:block;color:var(--text3);">@ $1.435</small></td>
+            <td class="mono right" style="color:var(--text2);font-family:'DM Mono',monospace;">$10.732.346<small style="display:block;color:var(--text3);">@ $1.392,50</small></td>
+            <td class="mono right col-new">$13.771.387<small style="display:block;color:var(--text3);">@ $1.391,00</small></td>
+            <td class="mono right"><span class="var-pos">+$2.167.805</span></td>
+            <td class="right"><span class="var-pos">+18,7 %</span></td>
+            <td class="mono right" style="color:#1a9a50;font-weight:700;">1,80 %</td>
           </tr>
           <tr>
-            <td><strong>Euros Físicos</strong><div style="font-size:1.2rem;color:var(--text3);">EUR · TC BNA</div></td>
+            <td><strong>Euros Físicos</strong><div style="font-size:.88rem;color:var(--text3);">EUR · TC BNA</div></td>
             <td class="mono right col-old">$1.291.447<small style="display:block;color:var(--text3);">@ $1.690</small></td>
-            <td class="mono right col-new">$1.201.835<small style="display:block;color:var(--text3);">@ $1.615</small></td>
-            <td class="mono right"><span class="var-neg">-$89.612</span></td>
-            <td class="right"><span class="var-neg">-6,94 %</span></td>
-            <td class="mono right" style="color:#7a50a8;font-weight:700;">0,19 %</td>
+            <td class="mono right" style="color:var(--text2);font-family:'DM Mono',monospace;">$4.888.368<small style="display:block;color:var(--text3);">@ $1.615</small></td>
+            <td class="mono right col-new">$4.888.368<small style="display:block;color:var(--text3);">@ $1.633,72</small></td>
+            <td class="mono right"><span class="var-pos">+$3.596.921</span></td>
+            <td class="right"><span class="var-pos">+278,5 %</span></td>
+            <td class="mono right" style="color:#7a50a8;font-weight:700;">0,64 %</td>
           </tr>
           <tr>
-            <td><strong>Caja Efectivo</strong><div style="font-size:1.2rem;color:var(--text3);">ARS físicos</div></td>
+            <td><strong>Caja Efectivo</strong><div style="font-size:.88rem;color:var(--text3);">ARS físicos</div></td>
             <td class="mono right col-old">$1.137.620</td>
-            <td class="mono right col-new">$899.600</td>
-            <td class="mono right"><span class="var-neg">-$238.020</span></td>
-            <td class="right"><span class="var-neg">-20,9 %</span></td>
-            <td class="mono right" style="color:#b03030;font-weight:700;">0,15 %</td>
+            <td class="mono right" style="color:var(--text2);font-family:'DM Mono',monospace;">$899.600</td>
+            <td class="mono right col-new">$1.644.400</td>
+            <td class="mono right"><span class="var-pos">+$506.780</span></td>
+            <td class="right"><span class="var-pos">+44,5 %</span></td>
+            <td class="mono right" style="color:#b03030;font-weight:700;">0,21 %</td>
           </tr>
           <tr style="background:var(--surface2);">
-            <td style="font-weight:700;font-size:1.1rem;">TOTAL GENERAL</td>
-            <td class="mono right col-old" style="font-weight:700;font-size:1.08rem;">$594.493.081</td>
-            <td class="mono right col-new" style="font-weight:700;font-size:1.08rem;">$618.426.750</td>
-            <td class="mono right" style="font-weight:700;"><span class="var-pos" style="font-size:1.12rem;">+$23.933.669</span></td>
-            <td class="right" style="font-weight:700;"><span class="var-pos" style="font-size:1.1rem;">+4,03 %</span></td>
-            <td class="mono right" style="font-weight:700;font-size:1.08rem;">100 %</td>
+            <td style="font-weight:700;font-size:1rem;">TOTAL GENERAL</td>
+            <td class="mono right col-old" style="font-weight:700;">$583.443.940</td>
+            <td class="mono right" style="font-weight:700;color:var(--text2);font-family:'DM Mono',monospace;">$607.704.849</td>
+            <td class="mono right col-new" style="font-weight:700;">$766.299.194</td>
+            <td class="mono right" style="font-weight:700;"><span class="var-pos" style="font-size:1rem;">+$182.855.254</span></td>
+            <td class="right" style="font-weight:700;"><span class="var-pos">+31,3 %</span></td>
+            <td class="mono right" style="font-weight:700;">100 %</td>
           </tr>
         </tbody>
       </table>
@@ -728,18 +858,18 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
 
     <!-- Gráfico composición -->
     <div class="chart-wrap full">
-      <div class="sh" style="--dc:#b03030;"><div class="dot"></div><h2>Composición del Disponible Total — 06/03 vs 07/04/2026</h2></div>
+      <div class="sh" style="--dc:#b03030;"><div class="dot"></div><h2>Composición del Disponible Total — 06/03 vs 30/04/2026</h2></div>
       <div style="padding:1.4rem 1.7rem 1.6rem;">
         <div style="display:flex;gap:1.5rem;margin-bottom:1.3rem;align-items:center;">
-          <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:30px;height:11px;border-radius:3px;background:#b0b8c8;opacity:.7;"></div><span style="font-size:1.2rem;font-family:'DM Mono',monospace;color:var(--text3);">06/03/2026 · $594,5M</span></div>
-          <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:30px;height:11px;border-radius:3px;background:#b03030;"></div><span style="font-size:1.2rem;font-family:'DM Mono',monospace;color:var(--text2);">07/04/2026 · $618,4M</span></div>
+          <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:30px;height:11px;border-radius:3px;background:#b0b8c8;opacity:.7;"></div><span style="font-size:1.2rem;font-family:'DM Mono',monospace;color:var(--text3);">30/04/2026 · $766,3M</span></div>
+          <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:30px;height:11px;border-radius:3px;background:#b03030;"></div><span style="font-size:1.2rem;font-family:'DM Mono',monospace;color:var(--text2);">30/04/2026 · $766,3M</span></div>
           <div style="margin-left:auto;font-size:1.18rem;color:var(--text3);font-family:'DM Mono',monospace;">% sobre el total de cada fecha</div>
         </div>
         <div style="display:grid;grid-template-columns:190px 1fr 75px 75px 70px;gap:.55rem 1.2rem;align-items:center;padding-bottom:.55rem;border-bottom:2px solid var(--border);margin-bottom:.55rem;">
           <div style="font-size:1.12rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);font-weight:600;">Componente</div>
           <div style="font-size:1.12rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);font-weight:600;">Distribución comparada</div>
           <div style="font-size:1.12rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);font-weight:600;text-align:right;">06/03</div>
-          <div style="font-size:1.12rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);font-weight:600;text-align:right;">07/04</div>
+          <div style="font-size:1.12rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);font-weight:600;text-align:right;">30/04</div>
           <div style="font-size:1.12rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);font-weight:600;text-align:right;">Δ pp</div>
         </div>
         <!-- Inversiones -->
@@ -747,10 +877,10 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
           <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:10px;height:10px;border-radius:50%;background:#2060a8;flex-shrink:0;"></div><span style="font-size:1.06rem;font-weight:600;">Inversiones</span></div>
           <div style="display:flex;flex-direction:column;gap:4px;">
             <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#b0b8c8;opacity:.7;width:calc(94.50% * 0.95);"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:var(--text3);">94,50 %</span></div>
-            <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#2060a8;width:calc(95.19% * 0.95);"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:#2060a8;font-weight:700;">95,19 %</span></div>
+            <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#2060a8;width:calc(96.01% * 0.95);"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:#2060a8;font-weight:700;">95,93 %</span></div>
           </div>
           <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:var(--text3);text-align:right;">94,50 %</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;font-weight:700;text-align:right;">95,19 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;font-weight:700;text-align:right;">95,93 %</div>
           <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:#1a9a50;font-weight:700;text-align:right;">+0,69</div>
         </div>
         <!-- Bancos -->
@@ -758,10 +888,10 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
           <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:10px;height:10px;border-radius:50%;background:#a07820;flex-shrink:0;"></div><span style="font-size:1.06rem;font-weight:600;">Bancos</span></div>
           <div style="display:flex;flex-direction:column;gap:4px;">
             <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#b0b8c8;opacity:.7;width:calc(1.27% * 0.95);min-width:4px;"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:var(--text3);">1,27 %</span></div>
-            <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#a07820;width:calc(1.00% * 0.95);min-width:4px;"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:#a07820;font-weight:700;">1,00 %</span></div>
+            <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#a07820;width:calc(1.42% * 0.95);min-width:4px;"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:#a07820;font-weight:700;">1,42 %</span></div>
           </div>
           <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:var(--text3);text-align:right;">1,27 %</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;font-weight:700;text-align:right;">1,00 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;font-weight:700;text-align:right;">1,42 %</div>
           <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:#b03030;font-weight:700;text-align:right;">-0,27</div>
         </div>
         <!-- Dólares -->
@@ -769,11 +899,11 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
           <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:10px;height:10px;border-radius:50%;background:#1a9a50;flex-shrink:0;"></div><span style="font-size:1.06rem;font-weight:600;">Dólares</span></div>
           <div style="display:flex;flex-direction:column;gap:4px;">
             <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#b0b8c8;opacity:.7;width:calc(3.81% * 0.95);min-width:4px;"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:var(--text3);">3,81 %</span></div>
-            <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#1a9a50;width:calc(3.47% * 0.95);min-width:4px;"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:#1a9a50;font-weight:700;">3,47 %</span></div>
+            <div style="display:flex;align-items:center;gap:.4rem;"><div style="height:8px;border-radius:3px;background:#1a9a50;width:calc(1.80% * 0.95);min-width:4px;"></div><span style="font-size:1.12rem;font-family:'DM Mono',monospace;color:#1a9a50;font-weight:700;">1,80 %</span></div>
           </div>
           <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:var(--text3);text-align:right;">3,81 %</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;font-weight:700;text-align:right;">3,47 %</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:#b03030;font-weight:700;text-align:right;">-0,34</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;font-weight:700;text-align:right;">1,80 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:#b03030;font-weight:700;text-align:right;">+0,03</div>
         </div>
         <!-- Euros + Caja -->
         <div style="display:grid;grid-template-columns:190px 1fr 75px 75px 70px;gap:.5rem 1.2rem;align-items:center;padding:.5rem 0;">
@@ -784,24 +914,291 @@ footer p{font-size:.76rem;color:var(--text3);font-family:'DM Mono',monospace;}
           </div>
           <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:var(--text3);text-align:right;">0,41 %</div>
           <div style="font-family:'DM Mono',monospace;font-size:1.25rem;font-weight:700;text-align:right;">0,34 %</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:#b03030;font-weight:700;text-align:right;">-0,07</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.25rem;color:#b03030;font-weight:700;text-align:right;">+0,70</div>
         </div>
         <!-- Total -->
         <div style="display:grid;grid-template-columns:190px 1fr 75px 75px 70px;gap:.5rem 1.2rem;align-items:center;padding:.7rem 0 0;border-top:2px solid var(--border);margin-top:.3rem;">
           <div style="font-size:1.08rem;font-weight:700;">TOTAL GENERAL</div>
           <div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.28rem;color:var(--text3);font-weight:600;text-align:right;">$594,5M</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.28rem;font-weight:700;text-align:right;">$618,4M</div>
-          <div style="font-family:'DM Mono',monospace;font-size:1.28rem;color:#1a9a50;font-weight:700;text-align:right;">+4,03 %</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.28rem;color:var(--text3);font-weight:600;text-align:right;">$766,3M</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.28rem;font-weight:700;text-align:right;">$766,3M</div>
+          <div style="font-family:'DM Mono',monospace;font-size:1.28rem;color:#1a9a50;font-weight:700;text-align:right;">+4,16 %</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ═══════════════════════════ TAB ESTRATEGIA FINANCIERA ══ -->
+<div id="tab-estrategia" class="tab-panel">
+
+  <!-- Hero -->
+  <div style="background:linear-gradient(130deg,#0a2a35 0%,#0d3d4a 55%,#0e6b7a 100%);border-radius:18px;padding:2rem 2.4rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;position:relative;overflow:hidden;">
+    <div style="position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none;"></div>
+    <div>
+      <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.42);margin-bottom:.4rem;">Cartera Inviu · Centro Administrativo</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:2.4rem;color:#fff;letter-spacing:-.02em;line-height:1.1;">Estrategia <em style="color:#5de0f0;font-style:italic;">Financiera</em></div>
+      <div style="margin-top:.4rem;font-size:.82rem;color:rgba(255,255,255,.38);font-family:'DM Mono',monospace;">Informe de posicionamiento · Rotación 19/03/2026</div>
+    </div>
+    <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:.5rem 1.3rem;font-size:.85rem;font-weight:600;color:#fff;">Cartera INVIU · Centro Administrativo</div>
+  </div>
+
+  <!-- 6 KPI cards -->
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;margin-bottom:1.25rem;">
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:1.1rem 1.2rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#0e6b7a;border-radius:13px 13px 0 0;"></div>
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.5rem;">Exposición en Pesos</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--text);">30 %</div>
+      <div style="font-size:.75rem;color:#0e6b7a;font-family:'DM Mono',monospace;margin-top:.3rem;">antes 15% · +15 pp</div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:1.1rem 1.2rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#2060a8;border-radius:13px 13px 0 0;"></div>
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.5rem;">Exposición Dolarizada</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--text);">70 %</div>
+      <div style="font-size:.75rem;color:#2060a8;font-family:'DM Mono',monospace;margin-top:.3rem;">estabilidad + rendimiento USD</div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:1.1rem 1.2rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#a07820;border-radius:13px 13px 0 0;"></div>
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.5rem;">Tasa Bloqueada (Letras)</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--text);">32 % TNA</div>
+      <div style="font-size:.75rem;color:#a07820;font-family:'DM Mono',monospace;margin-top:.3rem;">vto. agosto 2026 · precio $113,47</div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:1.1rem 1.2rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#1a9a50;border-radius:13px 13px 0 0;"></div>
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.5rem;">Rendimiento Proyectado USD</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--text);">7 – 8 %</div>
+      <div style="font-size:.75rem;color:#1a9a50;font-family:'DM Mono',monospace;margin-top:.3rem;">anual sobre tramo dolarizado</div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:1.1rem 1.2rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#7a50a8;border-radius:13px 13px 0 0;"></div>
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.5rem;">Dólar MEP al 09/04/2026</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--text);">$ 1.427</div>
+      <div style="font-size:.75rem;color:#7a50a8;font-family:'DM Mono',monospace;margin-top:.3rem;">vs $1.421 el 19/03 · +0,4% en 21d</div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:1.1rem 1.2rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#b03030;border-radius:13px 13px 0 0;"></div>
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.5rem;">Tasa Pesos Mercado Actual</div>
+      <div style="font-family:'DM Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--text);">23 % TNA</div>
+      <div style="font-size:.75rem;color:#b03030;font-family:'DM Mono',monospace;margin-top:.3rem;">vs 25% al momento de la rotación</div>
+    </div>
+
+  </div>
+
+  <!-- Contexto + Puntos clave -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+
+    <div class="sec">
+      <div class="sh" style="--dc:#0e6b7a;"><div class="dot"></div><h2>🎯 Contexto y Estrategia</h2></div>
+      <div style="padding:1.3rem 1.5rem;font-size:1rem;color:var(--text2);line-height:1.75;">
+        <p>La estrategia definida en la última reunión buscó <strong style="color:var(--text);">incrementar la exposición en pesos</strong>, ante un dólar estable o levemente a la baja. Se aumentó la posición en pesos del <strong style="color:var(--text);">15% al 30%</strong>, aprovechando tasas cercanas al <strong style="color:var(--text);">32% anual</strong> en instrumentos locales.</p>
+        <p style="margin-top:1rem;">Los fondos en efectivo (aproximadamente <strong style="color:var(--text);">USD 26.000</strong>) fueron colocados en bonos del gobierno en un momento de precios bajos, consolidando el segmento dolarizado.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sh" style="--dc:#a07820;"><div class="dot"></div><h2>📌 Puntos Clave a Recordar</h2></div>
+      <div style="padding:1.3rem 1.5rem;">
+        <div style="display:flex;flex-direction:column;gap:.9rem;">
+
+          <div style="display:flex;gap:.8rem;align-items:flex-start;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#0e6b7a;flex-shrink:0;margin-top:.55rem;"></div>
+            <div style="font-size:1rem;color:var(--text2);line-height:1.65;">Las <strong style="color:var(--text);">Letras (pesos)</strong> deben mantenerse hasta su vencimiento en <strong style="color:var(--text);">agosto 2026</strong> para maximizar el rendimiento.</div>
+          </div>
+
+          <div style="display:flex;gap:.8rem;align-items:flex-start;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#0e6b7a;flex-shrink:0;margin-top:.55rem;"></div>
+            <div style="font-size:1rem;color:var(--text2);line-height:1.65;">La <strong style="color:var(--text);">caución en pesos</strong> puede dolarizarse en cualquier momento o utilizarse para cubrir gastos operativos.</div>
+          </div>
+
+          <div style="display:flex;gap:.8rem;align-items:flex-start;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#0e6b7a;flex-shrink:0;margin-top:.55rem;"></div>
+            <div style="font-size:1rem;color:var(--text2);line-height:1.65;">Los <strong style="color:var(--text);">bonos corporativos (ONs)</strong> mantuvieron su valor; los bonos soberanos mostraron mayor volatilidad y fueron aprovechados a precios bajos.</div>
+          </div>
+
+          <div style="display:flex;gap:.8rem;align-items:flex-start;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#0e6b7a;flex-shrink:0;margin-top:.55rem;"></div>
+            <div style="font-size:1rem;color:var(--text2);line-height:1.65;">La <strong style="color:var(--text);">exposición dolarizada actual (70%)</strong> provee estabilidad, con rendimientos proyectados de <strong style="color:var(--text);">7–8% anual en USD</strong>.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contexto macro -->
+  <div class="sec" style="margin-bottom:1rem;">
+    <div class="sh" style="--dc:#0e6b7a;"><div class="dot"></div><h2>🌐 Contexto Macro y Validación de la Estrategia</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+
+      <!-- Tipo de cambio -->
+      <div style="padding:1.4rem 1.6rem;border-right:1px solid var(--border);">
+        <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#0e6b7a;font-weight:700;margin-bottom:.8rem;">Tipo de Cambio (Dólar MEP)</div>
+        <div style="font-size:1rem;color:var(--text2);line-height:1.75;">
+          Al momento de la rotación (19/03/2026) el MEP cotizaba <strong style="color:var(--text);">$1.421</strong>. Al 09/04/2026 opera en <strong style="color:var(--text);">$1.427</strong> — variación de apenas <strong style="color:#1a9a50;">+0,4% en 21 días</strong>. El dólar oficial se ubica en $1.405, con brecha prácticamente nula respecto al blue (~1%). La decisión de aumentar exposición en pesos resultó acertada: el tipo de cambio no se movió.
+        </div>
+      </div>
+
+      <!-- Tasas en pesos -->
+      <div style="padding:1.4rem 1.6rem;">
+        <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#a07820;font-weight:700;margin-bottom:.8rem;">Tasas en Pesos</div>
+        <div style="font-size:1rem;color:var(--text2);line-height:1.75;">
+          Al momento de la rotación, la caución bursátil operaba en torno al <strong style="color:var(--text);">25% TNA</strong> promedio. A la fecha, las tasas comprimieron aún más hacia la zona del <strong style="color:var(--text);">23% TNA</strong> (plazo fijo bancario: 20–22% TNA). Bloquear el <strong style="color:var(--text);">32% en las Letras de agosto</strong> fue una decisión de alto valor relativo.
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border);padding:1.4rem 1.6rem;border-right:1px solid var(--border);">
+        <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#2060a8;font-weight:700;margin-bottom:.8rem;">Letra Adquirida</div>
+        <div style="font-size:1rem;color:var(--text2);line-height:1.75;">
+          Precio de compra <strong style="color:var(--text);">$113,47</strong> con vencimiento fines de agosto 2026. El rendimiento fijado es del <strong style="color:var(--text);">32% TNA</strong>, en un contexto donde esa tasa ya no está disponible en el mercado.
+        </div>
+      </div>
+
+      <!-- Régimen cambiario -->
+      <div style="border-top:1px solid var(--border);padding:1.4rem 1.6rem;">
+        <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#7a50a8;font-weight:700;margin-bottom:.8rem;">Régimen Cambiario</div>
+        <div style="font-size:1rem;color:var(--text2);line-height:1.75;">
+          Argentina opera bajo flotación administrada entre bandas (piso ~$1.000 / techo ~$1.665 al 09/04), ajustadas mensualmente por inflación desde enero 2026. El BCRA acumuló aproximadamente <strong style="color:var(--text);">USD 4.000 millones</strong> en reservas durante Q1 2026. El oficial se mantiene cerca del centro de la banda, lo que reduce el riesgo de salto cambiario en el corto plazo y <strong style="color:var(--text);">avala la estrategia de carry en pesos</strong>.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Posicionamiento actual -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+
+    <div class="sec">
+      <div class="sh" style="--dc:#2060a8;"><div class="dot"></div><h2>📊 Composición Actual del Portfolio</h2></div>
+      <div style="padding:1.2rem 1.4rem;">
+        <!-- Barra pesos/dólares -->
+        <div style="margin-bottom:1.2rem;">
+          <div style="display:flex;justify-content:space-between;font-size:.82rem;font-family:'DM Mono',monospace;margin-bottom:.4rem;">
+            <span style="color:#0e6b7a;font-weight:700;">■ Pesos 30%</span>
+            <span style="color:#2060a8;font-weight:700;">■ Dolarizado 70%</span>
+          </div>
+          <div style="height:18px;border-radius:6px;overflow:hidden;display:flex;gap:2px;box-shadow:0 1px 4px rgba(0,0,0,.08);">
+            <div style="flex:30;background:#0e6b7a;border-radius:6px 0 0 6px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:.72rem;color:#fff;font-family:'DM Mono',monospace;font-weight:700;">30%</span>
+            </div>
+            <div style="flex:70;background:#2060a8;border-radius:0 6px 6px 0;display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:.72rem;color:#fff;font-family:'DM Mono',monospace;font-weight:700;">70%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Detalle pesos -->
+        <div style="margin-bottom:.6rem;">
+          <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#0e6b7a;font-weight:700;margin-bottom:.5rem;">Segmento Pesos (30%)</div>
+          <div style="display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
+            <span style="font-size:.95rem;color:var(--text2);">Letra Tesoro S31G6 (vto. 31/08/26)</span>
+            <span style="font-family:'DM Mono',monospace;font-size:.95rem;font-weight:700;color:var(--text);">$83.480.696</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.45rem 0;">
+            <span style="font-size:.95rem;color:var(--text2);">Caución colocadora (vto. 08/05)</span>
+            <span style="font-family:'DM Mono',monospace;font-size:.95rem;font-weight:700;color:var(--text);">$80.526.295</span>
+          </div>
+        </div>
+        <!-- Detalle dolarizado -->
+        <div>
+          <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#2060a8;font-weight:700;margin-bottom:.5rem;">Segmento Dolarizado (70%)</div>
+          <div style="display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
+            <span style="font-size:.95rem;color:var(--text2);">Bonos soberanos (AL30, AL35, AL41)</span>
+            <span style="font-family:'DM Mono',monospace;font-size:.95rem;font-weight:700;color:var(--text);">$135.122.988</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
+            <span style="font-size:.95rem;color:var(--text2);">ONs corporativas (YPF, Telecom, Vista)</span>
+            <span style="font-family:'DM Mono',monospace;font-size:.95rem;font-weight:700;color:var(--text);">$211.751.725</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.05);">
+            <span style="font-size:.95rem;color:var(--text2);">BOPREAL S1B</span>
+            <span style="font-family:'DM Mono',monospace;font-size:.95rem;font-weight:700;color:var(--text);">$25.170.497</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.45rem 0;">
+            <span style="font-size:.95rem;color:var(--text2);">Cedear BAK + Moneda USD</span>
+            <span style="font-family:'DM Mono',monospace;font-size:.95rem;font-weight:700;color:var(--text);">$10.842.257</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sh" style="--dc:#1a9a50;"><div class="dot"></div><h2>✅ Evaluación de la Decisión</h2></div>
+      <div style="padding:1.3rem 1.5rem;display:flex;flex-direction:column;gap:.85rem;">
+
+        <div style="background:rgba(26,154,80,.06);border:1px solid rgba(26,154,80,.2);border-radius:10px;padding:1rem 1.2rem;">
+          <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#1a9a50;font-weight:700;margin-bottom:.4rem;">✅ Tipo de cambio estable</div>
+          <div style="font-size:.95rem;color:var(--text2);line-height:1.65;">El MEP pasó de $1.421 a $1.427 (+0,4%) en 21 días. La apuesta por pesos no generó pérdida cambiaria.</div>
+        </div>
+
+        <div style="background:rgba(26,154,80,.06);border:1px solid rgba(26,154,80,.2);border-radius:10px;padding:1rem 1.2rem;">
+          <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#1a9a50;font-weight:700;margin-bottom:.4rem;">✅ Tasa bloqueada en máximos relativos</div>
+          <div style="font-size:.95rem;color:var(--text2);line-height:1.65;">32% TNA asegurado hasta agosto 2026 vs. mercado actual de 23% TNA. Diferencial de +9 pp a favor.</div>
+        </div>
+
+        <div style="background:rgba(26,154,80,.06);border:1px solid rgba(26,154,80,.2);border-radius:10px;padding:1rem 1.2rem;">
+          <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#1a9a50;font-weight:700;margin-bottom:.4rem;">✅ Bonos comprados a precios bajos</div>
+          <div style="font-size:.95rem;color:var(--text2);line-height:1.65;">Los AL35 aumentaron de 35.266 a 54.891 unidades aprovechando precios de mercado deprimidos.</div>
+        </div>
+
+        <div style="background:rgba(176,48,48,.05);border:1px solid rgba(176,48,48,.15);border-radius:10px;padding:1rem 1.2rem;">
+          <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#b03030;font-weight:700;margin-bottom:.4rem;">⚠️ Punto de atención</div>
+          <div style="font-size:.95rem;color:var(--text2);line-height:1.65;">El Cedear BAK cayó de $3.522 a $2.630 (-21,6%). Monitorear exposición en Braskem.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Próximos vencimientos -->
+  <div class="sec" style="margin-bottom:1rem;">
+    <div class="sh" style="--dc:#a07820;"><div class="dot"></div><h2>📅 Próximos Vencimientos y Decisiones</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+
+      <div style="padding:1.3rem 1.5rem;border-right:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;">
+          <div style="background:#e07820;color:#fff;font-family:'DM Mono',monospace;font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:100px;">10 ABR 2026</div>
+          <span style="font-size:.82rem;color:var(--text3);">Inmediato</span>
+        </div>
+        <div style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.3rem;">Caución Colocadora</div>
+        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:700;color:#e07820;margin-bottom:.4rem;">$80.526.295</div>
+        <div style="font-size:.9rem;color:var(--text2);line-height:1.6;">Fondos disponibles para reinversión. Evaluar renovar caución, dolarizar o cubrir gastos operativos.</div>
+      </div>
+
+      <div style="padding:1.3rem 1.5rem;border-right:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;">
+          <div style="background:#0e6b7a;color:#fff;font-family:'DM Mono',monospace;font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:100px;">31 AGO 2026</div>
+          <span style="font-size:.82rem;color:var(--text3);">~5 meses</span>
+        </div>
+        <div style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.3rem;">Letra Tesoro S31G6</div>
+        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:700;color:#0e6b7a;margin-bottom:.4rem;">$83.480.696</div>
+        <div style="font-size:.9rem;color:var(--text2);line-height:1.6;">Mantener hasta vencimiento para maximizar el 32% TNA bloqueado. No vender antes de agosto.</div>
+      </div>
+
+      <div style="padding:1.3rem 1.5rem;">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;">
+          <div style="background:#2060a8;color:#fff;font-family:'DM Mono',monospace;font-size:.78rem;font-weight:700;padding:.25rem .7rem;border-radius:100px;">07 MAY 2027</div>
+          <span style="font-size:.82rem;color:var(--text3);">~13 meses</span>
+        </div>
+        <div style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.3rem;">ON YPF Clase 37 (YM37O)</div>
+        <div style="font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:700;color:#2060a8;margin-bottom:.4rem;">$110.064.637</div>
+        <div style="font-size:.9rem;color:var(--text2);line-height:1.6;">Mayor posición en bonos. Evaluar continuidad según contexto de tasas USD al acercarse al vencimiento.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 <footer>
-  <p>Congregación Hnas. Dominicas — Centro Administrativo · Actualizado 07/04/2026</p>
-  <p>BNA: USD $1.392,50 · EUR $1.615 · Inviu TC MEP $1.430,16 · TC CCL $1.485,31</p>
+  <p>Congregación Hnas. Dominicas — Centro Administrativo · Actualizado 30/04/2026</p>
+  <p>BNA: USD $1.391 · EUR $1.633,72 · Inviu TC MEP $1.442,43 · TC CCL $1.500,76</p>
 </footer>
 
 <script>
